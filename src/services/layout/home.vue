@@ -7,7 +7,7 @@
     
       form(@submit.prevent="busqueda", )
         input(type="search" v-model="qbusqueda" placeholder="¿Qué quieres saber?" required)
-        input(type="submit")
+        input(type="submit" value="Enviar")
 
       form()
         input(type="radio" id="videos" name="media" value="Videos" v-model="formulario")
@@ -22,9 +22,15 @@
       //- p Total: {{resultado.collection.metadata.total_hits}} resultados
       p Total Imagenes: {{totalImages}} 
       p Total Videos: {{totalVideos}} 
-      span(v-for="item in resultado.collection.items")
-        ppimages(:item="item", :key="item.data[0].nasa_id", v-if="item.data[0].media_type=='image'", v-show="formulario == 'Imagenes'")
-        ppvideo( :item="item", :key="item.data[0].nasa_id", v-if="item.data[0].media_type=='video'", v-show="formulario == 'Videos'")
+
+      ppimages(v-for="item in resultado.collection.items",
+              :item="item", :key="item.data[0].nasa_id", 
+                v-if="item.data[0].media_type=='image'", 
+                v-show="formulario == 'Imagenes'")
+      ppvideo(v-for="item in resultado.collection.items",
+              :item="item", :key="item.data[0].nasa_id", 
+                v-if="item.data[0].media_type=='video'", 
+                v-show="formulario == 'Videos'")
 </template>
 
 <script>
@@ -97,11 +103,16 @@ export default {
     font-size: 1.2em
  
   ul
-    p
-      display: inline-flex
-      margin: 0 15px
+    span
+
+  p
+    display: inline-flex
+    margin: 0 15px
 
   li
-    display: block
+    // display: block
     margin: 0
+  
+  input
+    font-family: 'Montserrat', sans-serif
 </style>
