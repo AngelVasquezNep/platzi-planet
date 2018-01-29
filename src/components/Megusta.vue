@@ -5,9 +5,12 @@
       input(type="button" value="comentar" @click="coment") 
       input(type="button" value="compartir")
     .comentarios(v-show="mostrarComentario") 
-      input(type="text" v-model="comentariohecho")
-      p(v-show="comentariohecho!=''") {{comentariohecho}}    
-      input(type="button" value="enviar")
+      input(type="text" v-model="newComent.text" placeholder="Agregue su comentario")
+      //- p(v-show="newComent.text!=''") {{newComent.text}} 
+
+      p(v-for="com in comentariohecho") {{com.text}} {{com.hora}}  
+      
+      input(type="button" value="enviar" @click="addComentario")
 </template>
 
 <script>
@@ -16,7 +19,8 @@
     data(){
       return{
         mostrarComentario: false,
-        comentariohecho: ''
+        comentariohecho: [],
+        newComent:{text:'', hora:0}
       }
     },
     methods:{
@@ -25,6 +29,12 @@
           this.mostrarComentario = false 
         } else if(this.mostrarComentario == false) {
           this.mostrarComentario = true
+        }
+      },
+      addComentario(){
+        if(this.newComent.text != ''){
+          this.comentariohecho.push(this.newComent)
+          this.newComent = {text:'', hora:0}
         }
       }
     }
@@ -36,12 +46,13 @@
     background-color: #fff
     color: #fff
 
+
     input[type="button"]
       font-size: 1.2em
       font-family: 'Montserrat', sans-serif
-      width: 30%
+      width: 20%
       background: rgb(255, 30, 107)
-      color: white
+      color: rgb(245, 245, 245)
       border-style: none
       border-bottom: 4px solid rgb(138, 20, 60)
       border-radius: 4px
@@ -65,6 +76,10 @@
       input[type="button"]
         align-content: flex-end
 
+    .botones
+      display: flex
+      justify-content: space-around 
+      width: 100% 
 
     p
       padding: 10px

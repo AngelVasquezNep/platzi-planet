@@ -91,6 +91,10 @@ export default {
     width: 75%
     background: #FFFFFF
 
+  h1
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600
+
   .formulario
     display: block
     margin: 0 auto
