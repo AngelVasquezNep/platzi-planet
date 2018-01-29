@@ -1,12 +1,13 @@
 <template lang="pug">
   div
     .formulario
-
       
       h1 ¡Bienvenido a Platzi-Planet!
     
       form(@submit.prevent="busqueda", )
-        input(type="search" v-model="qbusqueda" placeholder="¿Qué quieres saber?" required)
+        input.buscador(type="search" v-model="qbusqueda", 
+              placeholder="¿Qué quieres saber?",
+              required)
         input(type="submit" value="Enviar")
 
       form()
@@ -15,13 +16,13 @@
         
         input(type="radio" id="imagenes" name="media" value="Imagenes" v-model="formulario")
         label(for="imagenes" ) Imagenes
-
+      p(v-if="statusRes") Total Imagenes: {{totalImages}} 
+      p(v-if="statusRes") Total Videos: {{totalVideos}} 
 
 
     ul(v-if="statusRes")
-      //- p Total: {{resultado.collection.metadata.total_hits}} resultados
-      p Total Imagenes: {{totalImages}} 
-      p Total Videos: {{totalVideos}} 
+      //- p Total Imagenes: {{totalImages}} 
+      //- p Total Videos: {{totalVideos}} 
 
       ppimages(v-for="item in resultado.collection.items",
               :item="item", :key="item.data[0].nasa_id", 
@@ -102,11 +103,21 @@ export default {
     width: 100%
     padding: 2em 0
 
+  .buscador
+    padding: 5px
+    border-radius: 10px
+    &:focus
+      outline: 0
+
   input
     margin: 10px
     font-size: 1.2em
  
   ul
+    overflow-y: scroll
+    overflow-x: hidden
+    max-height: 150vh
+    padding: 4px
     span
 
   p

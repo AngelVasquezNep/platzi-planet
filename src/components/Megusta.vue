@@ -56,19 +56,25 @@
       font-size: 1.2em
       font-family: 'Montserrat', sans-serif
       width: 20%
-      background: rgb(255, 30, 107)
-      color: rgb(245, 245, 245)
       border-style: none
-      border-bottom: 4px solid rgb(138, 20, 60)
-      border-radius: 4px
-      padding: 5px
       margin: 5px
+      padding: 5px
       transition: .2s
+      border-radius: 4px
+      border-bottom: 4px solid #fff
+      background: #fff
 
       &:hover
+        background: rgb(255, 30, 107)
+        color: rgb(245, 245, 245)
+        border-bottom: 4px solid rgb(138, 20, 60)
         background: rgb(199, 28, 86)
+        box-shadow: 0px 2px 5px #000
+        cursor: pointer
       &:active
         transform: scale(.95)
+      &:focus
+        outline: 0
 
     input[type="text"]
       width: 91%
@@ -96,7 +102,7 @@
       border: 1px solid rgba(253, 22, 223, 0.1)
       border-radius: 5px
       position: relative
-      transition: .7s
+      transition: .2s
       padding-bottom: 0
       
       &:hover
