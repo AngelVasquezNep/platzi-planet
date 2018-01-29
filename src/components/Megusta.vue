@@ -8,7 +8,10 @@
       input(type="text" v-model="newComent.text" placeholder="Agregue su comentario")
       //- p(v-show="newComent.text!=''") {{newComent.text}} 
 
-      p(v-for="com in comentariohecho") {{com.text}} {{com.hora}}  
+      div(v-for="com in comentariohecho", class="newComent") 
+        p {{com.text}} 
+        p(class="horario") Realizado a las: {{com.hora}}  
+        span(class="cancel") x
       
       input(type="button" value="enviar" @click="addComentario")
 </template>
@@ -33,6 +36,8 @@
       },
       addComentario(){
         if(this.newComent.text != ''){
+          let hoy = new Date()
+          this.newComent.hora = `${hoy.getHours()}:${hoy.getMinutes()}`
           this.comentariohecho.push(this.newComent)
           this.newComent = {text:'', hora:0}
         }
@@ -81,11 +86,49 @@
       justify-content: space-around 
       width: 100% 
 
-    p
+    
+    
+    .newComent
       padding: 10px
+      margin: 10px
       background-color: #f5f5f5
-      margin: 0
       color: #000
+      border: 1px solid rgba(253, 22, 223, 0.1)
+      border-radius: 5px
+      position: relative
+      transition: .7s
+      padding-bottom: 0
+      
+      &:hover
+        background-color: rgb(192, 192, 192)
+
+    .horario
+      border-top: 1px solid #b9b9b9
+      margin: 0
+      padding: 2px
+      display: flex
+      justify-content: flex-end
+    
+
+    .cancel
+      box-shadow: 0px 2px 5px #000
+      border: 1px solid rgba(253, 22, 223, 0.1)
+      padding: 5px 10px
+      border-radius: 20px
+      margin: 5px
+      color: #fff
+      background: rgb(211, 15, 108)
+      position: absolute
+      top: 0
+      right: 0
+      font-weight: 600
+      transition: .1s
+      
+      &:hover
+        background: rgb(139, 2, 67)
+        cursor: pointer
+      &:active
+        transform: scale(.9)
 
     
 </style>
