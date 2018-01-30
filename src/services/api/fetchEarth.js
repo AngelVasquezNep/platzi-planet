@@ -8,14 +8,11 @@ const data = {
 
 
 export default{
-  nasaSearch(queri){
+  search(queri){
     return fetch(`${data.busqueda}${queri}`)
     .then(res=>res.json())
   },
-  nasaVideo(url){
-    return fetch(url)
-      .then(res=>res.json())
-  },
+ 
   get(URL, callback){
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {

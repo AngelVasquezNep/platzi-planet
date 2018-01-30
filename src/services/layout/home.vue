@@ -64,7 +64,7 @@ export default {
     busqueda(){
       this.statusRes = false
       this.statusSpinner = true
-      nasa.nasaSearch(this.qbusqueda)
+      nasa.search(this.qbusqueda)
         .then(json=> {
           this.resultado = {}
           this.resultado = json
