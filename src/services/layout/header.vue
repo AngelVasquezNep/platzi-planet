@@ -1,6 +1,6 @@
 <template lang="pug">
-  div(@scroll="scroled")
-
+  //- div(@scroll="scroled")
+  #particles-js
     figure
       img(src="@/assets/nasaLogo.png")
       img.nave(src='@/assets/nave.svg' )
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  div
+  #particles-js
     display: flex
     justify-content: space-between
     align-content: center
