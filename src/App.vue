@@ -4,7 +4,8 @@
     ppheader
     
     .container
-      pphome
+      //- pphome
+      ppcumple
       ppnoticias
 
     ppfooter
@@ -16,6 +17,7 @@ import Ppfooter from '@/services/layout/footer.vue'
 import Ppheader from '@/services/layout/header.vue'
 import Pphome from '@/services/layout/home.vue'
 import Ppnoticias from '@/services/layout/noticias.vue'
+import Ppcumple from '@/services/layout/Cumple.vue'
 
 
 export default {
@@ -25,7 +27,7 @@ export default {
     }
   },
   components:{
-    Ppfooter, Ppheader, Pphome, Ppnoticias
+    Ppfooter, Ppheader, Pphome, Ppnoticias, Ppcumple
   }
 }
 </script>

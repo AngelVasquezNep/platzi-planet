@@ -26,5 +26,11 @@ export default{
     }
     xhr.open('GET', URL);
     xhr.send(null);
+  },
+
+  cumple(date){
+    return fetch(`${data.imageDay}&${date}`)
+      .then(res=>res.json())
   }
+  
 }
