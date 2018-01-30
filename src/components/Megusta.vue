@@ -1,15 +1,18 @@
 <template lang="pug">
   div
+    .link(v-show="mostrarLink")
+      p Este es el link de la imagen, compartelo con tus amigos 
+      p {{this.item.links[0].href}}
     .botones
       input(type="button" value="me gusta") 
       input(type="button" value="comentar" @click="coment") 
       input(type="button" value="compartir" @click="compartir")
     .comentarios(v-show="mostrarComentario") 
 
-      div(v-for="com in comentariohecho", class="newComent") 
+      div(v-for="(com, index) in comentariohecho", class="newComent") 
         p {{com.text}} 
         p(class="horario") Realizado a las: {{com.hora}}  
-        span(class="cancel") x
+        span(class="cancel" @click="removeComent(index)" ) x
       
       input(type="text" v-model="newComent.text" placeholder="Agregue su comentario")
       
@@ -19,11 +22,13 @@
 <script>
   export default {
     name: 'Megusta',
+    props:['item'],
     data(){
       return{
         mostrarComentario: false,
         comentariohecho: [],
-        newComent:{text:'', hora:0}
+        newComent:{text:'', hora:0},
+        mostrarLink: false
       }
     },
     methods:{
@@ -43,7 +48,11 @@
         }
       },
       compartir(){
-        this.$bus.$emit('share-image', this)
+        if(this.mostrarLink) return this.mostrarLink = false
+        if(!this.mostrarLink) return this.mostrarLink = true
+      },
+      removeComent(index){
+        this.comentariohecho.splice(index,1)
       }
     }
   }  
@@ -54,6 +63,16 @@
     background-color: #fff
     color: #fff
 
+    .link
+      color: #000
+      padding: 20px
+      p
+        &:last-child
+          color: rgb(1.1%, 30.9%, 99.9%)
+          font-weight: 700
+        
+      p
+        margin: 0
 
     input[type="button"]
       font-size: 1.2em
@@ -67,17 +86,16 @@
       border-bottom: 4px solid #fff
       background: #fff
 
-      &:hover
+      &:hover, &:focus
         background: rgb(255, 30, 107)
         color: rgb(245, 245, 245)
         border-bottom: 4px solid rgb(138, 20, 60)
         background: rgb(199, 28, 86)
         box-shadow: 0px 2px 5px 2px #808080
         cursor: pointer
+        outline: 0
       &:active
         transform: scale(.95)
-      &:focus
-        outline: 0
 
     input[type="text"]
       width: 91%
@@ -117,7 +135,7 @@
       padding: 2px
       display: flex
       justify-content: flex-end
-    
+
     .enviar
       width: 80% !important
     

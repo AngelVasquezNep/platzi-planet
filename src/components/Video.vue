@@ -5,7 +5,7 @@
     video(:src="video" v-if="changeVideo" controls)
     p {{item.data[0].description}}
     p Para saber más: {{item.data[0].keywords | separacion}}
-    megusta
+    megusta(:item="item")
     
 
 
@@ -22,7 +22,8 @@ export default {
     return {
       video: '',
       changeVideo: false,
-      mostrarbotton: true
+      mostrarbotton: true,
+      id: this.item.data[0].nasa_id
     }
   },
   components:{ Megusta },
@@ -41,6 +42,12 @@ export default {
     separacion(...a){
       return `${a[0]} `
     }
+  },
+  created(){
+  
+  },
+  mounted(){
+
   }
 }
 </script>

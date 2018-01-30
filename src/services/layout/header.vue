@@ -3,6 +3,7 @@
 
     figure
       img(src="@/assets/nasaLogo.png")
+      img.nave(src='@/assets/nave.svg' )
 
     nav
       ul
@@ -39,7 +40,7 @@ export default {
 
       img
         height: 60px
-        padding: 5px 10px
+        padding: 20px
 
 
     ul
@@ -62,7 +63,9 @@ export default {
 
         &:last-child
           margin-right: 30px
-
+  .nave
+    position: absolute
+    width: 100px
 
 
 </style>
