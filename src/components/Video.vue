@@ -70,7 +70,8 @@ export default {
       transition: .2s
 
       &:hover
-        background: #AB5517
+        // background: #AB5517
+        box-shadow: 0 2px 5px 3px #808080
       &:active
         transform: scale(.95)
 

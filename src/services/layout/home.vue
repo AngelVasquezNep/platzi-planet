@@ -99,20 +99,65 @@ export default {
   .formulario
     display: block
     margin: 0 auto
-    background: rgb(93.3%, 93.1%, 92.8%)
+    background: #E7E9EE
     width: 100%
     padding: 2em 0
 
   .buscador
-    padding: 5px
+    padding: 5px 10px
     border-radius: 10px
+    border-style: none
     &:focus
       outline: 0
 
   input
     margin: 10px
     font-size: 1.2em
- 
+    font-family: 'Montserrat', sans-serif
+
+  input[type="submit"]
+    color: #fff
+    border-radius: 5px
+    border-style: none
+    padding: 5px
+    border-bottom: 3px solid #E6E8EE
+    background-color: #E6E8EE
+    color: #000
+    transition: .2s
+    width: 30%
+    
+    &:hover, &:focus
+      outline: 0
+      box-shadow: 0px 2px 3px 2px #808080
+      background-color: #0A8898
+      border-bottom: 3px solid #808080
+      color: #fff
+    &:active
+      transform: scale(.95)
+
+  input[type="radio"]
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+
+    border: 2px solid #999;
+    transition: 0.2s all linear;
+    outline: none;
+
+    margin: 0 5px
+
+    &:checked
+      border: 5px solid #282F30;
+
+    &:active
+      background-color: white;
+      color: black;
+      outline: 1px solid black;
+
   ul
     overflow-y: scroll
     overflow-x: hidden
@@ -122,12 +167,10 @@ export default {
 
   p
     display: inline-flex
-    margin: 0 15px
+    margin: 15px
 
   li
     // display: block
     margin: 0
   
-  input
-    font-family: 'Montserrat', sans-serif
 </style>

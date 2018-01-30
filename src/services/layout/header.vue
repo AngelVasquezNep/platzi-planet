@@ -27,9 +27,12 @@ export default {
     justify-content: space-between
     align-content: center
     align-items: center
-    background: rgb(117, 235, 225)
+    background: linear-gradient(180deg, #202A90, #E7E9EE)
+    // background: linear-gradient(to left/right, white, black)
+    // background: rgb(117, 235, 225)
     width: 100%
     margin: 0
+    height: 200px
 
     figure
       margin: 0

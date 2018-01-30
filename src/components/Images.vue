@@ -4,7 +4,7 @@
     img(:src="item.links[0].href")
     p {{item.data[0].description}}
     p Para saber más: {{item.data[0].keywords | separacion}}
-    Megusta
+    megusta
 
 </template>
 

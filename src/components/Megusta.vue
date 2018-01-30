@@ -3,17 +3,17 @@
     .botones
       input(type="button" value="me gusta") 
       input(type="button" value="comentar" @click="coment") 
-      input(type="button" value="compartir")
+      input(type="button" value="compartir" @click="compartir")
     .comentarios(v-show="mostrarComentario") 
-      input(type="text" v-model="newComent.text" placeholder="Agregue su comentario")
-      //- p(v-show="newComent.text!=''") {{newComent.text}} 
 
       div(v-for="com in comentariohecho", class="newComent") 
         p {{com.text}} 
         p(class="horario") Realizado a las: {{com.hora}}  
         span(class="cancel") x
       
-      input(type="button" value="enviar" @click="addComentario")
+      input(type="text" v-model="newComent.text" placeholder="Agregue su comentario")
+      
+      input.enviar(type="button" value="enviar" @click="addComentario")
 </template>
 
 <script>
@@ -41,6 +41,9 @@
           this.comentariohecho.push(this.newComent)
           this.newComent = {text:'', hora:0}
         }
+      },
+      compartir(){
+        this.$bus.$emit('share-image', this)
       }
     }
   }  
@@ -69,7 +72,7 @@
         color: rgb(245, 245, 245)
         border-bottom: 4px solid rgb(138, 20, 60)
         background: rgb(199, 28, 86)
-        box-shadow: 0px 2px 5px #000
+        box-shadow: 0px 2px 5px 2px #808080
         cursor: pointer
       &:active
         transform: scale(.95)
@@ -82,7 +85,7 @@
       margin: 5px
       padding: 5px
       font-family: 'Montserrat', sans-serif
-
+      
     .comentarios
       input[type="button"]
         align-content: flex-end
@@ -115,24 +118,28 @@
       display: flex
       justify-content: flex-end
     
+    .enviar
+      width: 80% !important
+    
 
     .cancel
-      box-shadow: 0px 2px 5px #000
       border: 1px solid rgba(253, 22, 223, 0.1)
       padding: 5px 10px
       border-radius: 20px
       margin: 5px
-      color: #fff
-      background: rgb(211, 15, 108)
+      color: #808080
       position: absolute
       top: 0
       right: 0
       font-weight: 600
       transition: .1s
+      cursor: pointer
       
       &:hover
-        background: rgb(139, 2, 67)
-        cursor: pointer
+        background: rgb(211, 15, 108)
+        box-shadow: 0px 2px 5px #000
+        color: #fff
+
       &:active
         transform: scale(.9)
 
