@@ -4,7 +4,10 @@
     input(type="button" value="Ver video" @click="buscarVideo" v-show="mostrarbotton")
     video(:src="video" v-if="changeVideo" controls)
     p {{item.data[0].description}}
-    p Para saber más: {{item.data[0].keywords | separacion}}
+    p Para saber más: 
+      span.searchAbout(v-for="t in item.data[0].keywords",
+                   @click="searchAbout(t)",
+                   href="#") {{t}} | 
     megusta(:item="item")
     
 
@@ -36,18 +39,10 @@ export default {
         self.changeVideo = true
         self.mostrarbotton = false
       })
+    },
+    searchAbout(t){
+      this.$bus.$emit('search-about', t)
     }
-  },
-  filters:{
-    separacion(...a){
-      return `${a[0]} `
-    }
-  },
-  created(){
-  
-  },
-  mounted(){
-
   }
 }
 </script>
@@ -81,5 +76,9 @@ export default {
         box-shadow: 0 2px 5px 3px #808080
       &:active
         transform: scale(.95)
+  .searchAbout
+    text-decoration: underline
+    color: #1D654B !important
+    cursor: pointer
 
 </style>

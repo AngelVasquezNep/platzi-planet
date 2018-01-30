@@ -3,7 +3,10 @@
     h2 Title: {{item.data[0].title}}
     img(:src="item.links[0].href")
     p {{item.data[0].description}}
-    p Para saber más: {{item.data[0].keywords | separacion}}
+    p Para saber más: 
+      span.searchAbout(v-for="t in item.data[0].keywords",
+                   @click="searchAbout(t)",
+                   href="#") {{t}} | 
     megusta(:item="item")
 
 </template>
@@ -20,13 +23,10 @@ export default {
     }
   },
   components:{ Megusta },
-  filters:{
-    separacion(...a){
-      return `${a[0]}`
-    }
-  },
   methods:{
-    
+    searchAbout(t){
+      this.$bus.$emit('search-about', t)
+    }
   }
 }
 </script>
@@ -43,6 +43,9 @@ export default {
     img
       width: 90%
     
-
+  .searchAbout
+    text-decoration: underline
+    color: #1D654B !important
+    cursor: pointer
     
 </style>

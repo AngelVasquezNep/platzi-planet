@@ -16,14 +16,13 @@
         
         input(type="radio" id="imagenes" name="media" value="Imagenes" v-model="formulario")
         label(for="imagenes" ) Imagenes
-      p(v-if="statusRes") Total Imagenes: {{totalImages}} 
       p(v-if="statusRes") Total Videos: {{totalVideos}} 
+      p(v-if="statusRes") Total Imagenes: {{totalImages}} 
 
+    
+    spinner(v-show="statusSpinner")
 
     ul(v-if="statusRes")
-      //- p Total Imagenes: {{totalImages}} 
-      //- p Total Videos: {{totalVideos}} 
-
       ppimages(v-for="item in resultado.collection.items",
               :item="item", :key="item.data[0].nasa_id", 
                 v-if="item.data[0].media_type=='image'", 
@@ -38,6 +37,8 @@
 import nasa from '@/services/api/fetchEarth.js'
 import Ppimages from '@/components/Images.vue'
 import Ppvideo from '@/components/Video.vue'
+import Spinner from '@/components/Spinner.vue'
+
 
 
 export default {
@@ -47,17 +48,21 @@ export default {
       formulario: 'Imagenes',
       qbusqueda: '',
       statusRes: false,
+      statusSpinner: false,
       resultado: {},
       totalImagenescontadas: 0
     }
   },
-  components:{ Ppimages, Ppvideo },
+  components:{ Ppimages, Ppvideo, Spinner },
   methods:{
     busqueda(){
+      this.statusRes = false
+      this.statusSpinner = true
       nasa.nasaSearch(this.qbusqueda)
         .then(json=> {
           this.resultado = {}
           this.resultado = json
+          this.statusSpinner = false
           this.statusRes = true
           this.qbusqueda = ''
         })
@@ -80,6 +85,14 @@ export default {
         return resultado
       }, 0)
     }
+  },
+  created(){
+    this.$bus.$on('search-about', (t)=>{
+      console.log(`Escuahmos el evento: ${t}`)
+      this.qbusqueda = t
+      console.log(this.qbusqueda)
+      this.busqueda()
+    })
   }
 }
 
@@ -148,7 +161,7 @@ export default {
     transition: 0.2s all linear;
     outline: none;
 
-    margin: 0 5px
+    margin: 0 
 
     &:checked
       border: 5px solid #282F30;
@@ -157,6 +170,9 @@ export default {
       background-color: white;
       color: black;
       outline: 1px solid black;
+  
+  label
+    margin: 0 15px
 
   ul
     overflow-y: scroll
