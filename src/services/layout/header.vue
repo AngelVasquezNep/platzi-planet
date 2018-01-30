@@ -29,11 +29,10 @@ export default {
     align-content: center
     align-items: center
     background: linear-gradient(180deg, #202A90, #E7E9EE)
-    // background: linear-gradient(to left/right, white, black)
-    // background: rgb(117, 235, 225)
     width: 100%
     margin: 0
     height: 200px
+    overflow: hidden
 
     figure
       margin: 0
@@ -64,23 +63,24 @@ export default {
         &:last-child
           margin-right: 30px
   .nave
-    position: absolute
+    // position: absolute
     width: 100px
-    animation: 10s naveOnSpace infinite 
+    animation: 15s naveOnSpace infinite 
 
 
   @keyframes naveOnSpace
     0%
       transform: translateY(-200px)
     25%
-      transform: translateY(100px) translateX(50px) rotate(45deg)
+      transform: translateY(150px) translateX(50px) rotate(45deg)
     50%
-      transform: translateY(0px) translateX(50px) rotate(0deg)
+      transform: translateY(0px) translateX(0px) rotate(45deg)
     55%
-      transform: rotate(45deg) translateX(50px)
-    75%
-      transform: translateY(0px) translateX(1000px) rotate(45deg)
+      transform: translateY(0px) translateX(1500px) rotate(45deg)
+    85%
+      transform: translateY(0px) translateX(1500px) rotate(225deg)
+
     100%
-      transform: translateY(-200px) translateX(0px) rotate(270deg)
+      transform: translateY(0px) translateX(-650px) rotate(225deg)
 
 </style>
