@@ -18,9 +18,15 @@
         label(for="imagenes" ) Imagenes
       p(v-if="statusRes") Total Videos: {{totalVideos}} 
       p(v-if="statusRes") Total Imagenes: {{totalImages}} 
+      
 
     
     spinner(v-show="statusSpinner")
+
+    .nullResult(v-if="statusRes")
+      div(v-if="!resultado.collection.items.length")
+        h2 Lo sentimos, no hallamos lo que buscabas, intenta de nuevo.
+        img(src="@/assets/invasion.png")
 
     ul(v-if="statusRes")
       ppimages(v-for="item in resultado.collection.items",
@@ -49,8 +55,8 @@ export default {
       qbusqueda: '',
       statusRes: false,
       statusSpinner: false,
-      resultado: {},
-      totalImagenescontadas: 0
+      fullElements: 0,
+      resultado: {}
     }
   },
   components:{ Ppimages, Ppvideo, Spinner },
@@ -88,9 +94,7 @@ export default {
   },
   created(){
     this.$bus.$on('search-about', (t)=>{
-      console.log(`Escuahmos el evento: ${t}`)
       this.qbusqueda = t
-      console.log(this.qbusqueda)
       this.busqueda()
     })
   }
@@ -179,7 +183,6 @@ export default {
     overflow-x: hidden
     max-height: 150vh
     padding: 4px
-    span
 
   p
     display: inline-flex
@@ -188,5 +191,18 @@ export default {
   li
     // display: block
     margin: 0
+
+  .nullResult
+    display: flex
+    justify-content: center
+    margin: 0 auto
+    width: 90%
+    div
+      h2
+       font-weight: 600
+    
+    img
+      background: radial-gradient(red, #DC40A0,#FFFFFF, #FFFFFF)
+      width: 100%
   
 </style>
