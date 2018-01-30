@@ -5,7 +5,7 @@ export default [
   },
   {
     title: "¿Cuánto planetas hay en realidad?",
-    description: "Descubrelo investigando acerca de 'Pluton'"
+    description: "Descubrelo investigando acerca de 'Pluto'"
   },
   {
     title: "Bienvenidos a Platzi-planet",
