@@ -29,8 +29,10 @@ export default{
   },
 
   cumple(date){
-    return fetch(`${data.imageDay}&${date}`)
+    return fetch(`${data.imageDay}&date=${date}`)
       .then(res=>res.json())
-  }
+  },
+
   
+
 }

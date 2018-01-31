@@ -4,8 +4,9 @@
     ppheader
     
     .container
+      router-view      
       //- pphome
-      ppcumple
+      //- ppcumple
       ppnoticias
 
     ppfooter
@@ -26,9 +27,7 @@ export default {
     return {
     }
   },
-  components:{
-    Ppfooter, Ppheader, Pphome, Ppnoticias, Ppcumple
-  }
+  components:{ Ppfooter, Ppheader, Pphome, Ppnoticias, Ppcumple }
 }
 </script>
 

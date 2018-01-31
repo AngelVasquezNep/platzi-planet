@@ -7,8 +7,10 @@
 
     nav
       ul
-        li: a(href="#") Home
-        li: a(href="#") Cumpleaños
+        router-link(to="/") Home
+        router-link(to="cumple") Cumpleaños
+        //- li: a(href="#") Home
+        //- li: a(href="#") Cumpleaños
 </template>
 
 <script>

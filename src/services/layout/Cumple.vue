@@ -3,23 +3,30 @@
     h1 Ingresa una fecha importante para ti y conoce cual fue la foto 
        | más popular de la NASA 
     form.formulario(@submit.prevent="buscarFoto")
-      input.calendario(type="date" required)
+      input.calendario(type="date", v-model="fecha" required)
       input.enviar(type="submit")
     
-    HappyBirthday(v-for="i in info", :info="i" :key="i.url")
+    .imageDay(v-if="changeInfo")
+      //- h1 Prueba
+      HappyBirthday(:info="info" :key="info.url")
+
+
 
 </template>
 
 <script>
 import HappyBirthday from '@/components/HappyBirthday.vue'
+import nasa from '@/services/api/fetchEarth.js'
 
 export default {
   name: 'Cumple',
   components: { HappyBirthday },
   data(){
     return {
+      changeInfo: false,
+      fecha: '',
       info: [
-        {
+        { 
             "copyright": "Pierre Destribats", 
             "date": "2017-01-10", 
             "explanation": "Who guards the north?  The featured picture was taken last March in Finnish Lapland where weather can include sub-freezing temperatures and driving snow.  Surreal landscapes sometimes result, where white alien-looking sentinels seem to patrol the landscape.  In actuality though, the aliens are snow-covered trees, and the red hut they seem to be guarding is an outhouse.  Far in the distance, behind this uncommon Earthly vista, is a beautiful night sky which includes a green aurora, bright stars, and streaks of orbiting satellites.  Of course, in the spring, the trees thaw and Lapland looks much  different.", 
@@ -34,8 +41,19 @@ export default {
   },
   methods: {
     buscarFoto(){
-      console.log("TODO OK")
+      // console.log("TODO OK")
+      // nasa.cumple(this.fecha)
+      //   .then(json =>{
+      //     this.info = json
+      //   })
     }
+  },
+  mounted(){
+    // nasa.cumple('')
+    //   .then(json=>{
+    //     this.info = json
+    //     this.changeInfo = true
+    //   })
   }
 }
 </script>
