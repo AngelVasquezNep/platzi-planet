@@ -3,7 +3,8 @@ const data = {
   urlEarth: 'https://epic.gsfc.nasa.gov/api/natural',
   imageEarth: 'https://epic.gsfc.nasa.gov/epic-archive/jpg/'+ 'id' + '.jpg',
   imageDay: 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY',
-  busqueda: 'https://images-api.nasa.gov/search?q='
+  busqueda: 'https://images-api.nasa.gov/search?q=',
+  byId: 'https://images-api.nasa.gov/asset/'
 }
 
 
@@ -33,6 +34,8 @@ export default{
       .then(res=>res.json())
   },
 
-  
-
+  getById(id){
+    return fetch(`${data.byId}${id}`)
+      .then(res => res.json())
+  }
 }

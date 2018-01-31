@@ -1,6 +1,6 @@
 import Home from '@/services/layout/home.vue'
 import Cumple from '@/services/layout/Cumple.vue'
-import Planet from '@/compoments/Planet.vue'
+import Planet from '@/components/Planet.vue'
 
 
 const routes = [
