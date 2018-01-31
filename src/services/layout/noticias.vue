@@ -44,5 +44,9 @@
     margin-top: 5px
     margin-bottom: 5px
 
+  @media screen and (max-width: 800px)
+    div
+      background: red
+      display: none
 
 </style>

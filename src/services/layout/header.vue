@@ -3,12 +3,12 @@
   #particles-js
     figure
       img(src="@/assets/nasaLogo.png")
-      img.nave(src='@/assets/nave.svg' )
+    img.nave(src='@/assets/nave.svg' )
 
     nav
       ul
-        router-link(to="/") Home
-        router-link(to="cumple") Cumpleaños
+        router-link.enlace(to="/") Home
+        router-link.enlace(to="cumple") Cumpleaños
         //- li: a(href="#") Home
         //- li: a(href="#") Cumpleaños
 </template>
@@ -40,30 +40,30 @@ export default {
       margin: 0
 
       img
-        height: 60px
-        padding: 20px
+        height: 80px
+        padding: 0px
+
+    nav
+      display: flex
 
 
     ul
       height: inherit
+      margin: 0
+      padding: 15px
 
-      li
-        height: inherit
+      .enlace
+        text-decoration: none
+        color: rgb(91, 16, 80)
+        padding: 10px
+        cursor: pointer
+        transition: all .5s
+
+        &:hover
+          box-shadow: inset 0px -2px 0px 0px rgb(91, 16, 80)
+          color: white
 
 
-        a
-          text-decoration: none
-          display: flex
-          align-items: center
-          align-content: center
-          text-align: center
-          justify-content: center
-          height: 40px
-          width: 90px
-          color: rgb(91, 16, 80)
-
-        &:last-child
-          margin-right: 30px
   .nave
     // position: absolute
     width: 100px

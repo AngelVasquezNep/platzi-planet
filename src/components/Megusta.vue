@@ -75,7 +75,7 @@
         margin: 0
 
     input[type="button"]
-      font-size: 1.2em
+      font-size: 1em
       font-family: 'Montserrat', sans-serif
       width: 20%
       border-style: none
@@ -160,6 +160,22 @@
 
       &:active
         transform: scale(.9)
+  
+  @media screen and (max-width: 1200px)
+    div
+      input[type="button"]
+        font-size: .8em
+        width: 30%
 
-    
+  @media screen and (max-width: 800px)
+    div
+      input[type="button"]
+        font-size: .9em
+
+  @media screen and (max-width: 500px)
+    div
+      input[type="button"]
+        font-size: .8em
+
+
 </style>

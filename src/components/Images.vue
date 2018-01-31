@@ -1,8 +1,10 @@
 <template lang="pug">
   li(v-if="item.data[0].media_type=='image'")
-    h2 Title: {{item.data[0].title}}
-    img(:src="item.links[0].href")
-    p {{item.data[0].description}}
+    .titulo
+      h2 Title: {{item.data[0].title}}
+    figure
+      img(:src="item.links[0].href")
+    //- p {{item.data[0].description}}
     p Para saber más: 
       span.searchAbout(v-for="t in item.data[0].keywords",
                    @click="searchAbout(t)",
@@ -35,17 +37,36 @@ export default {
   
   li
     background: #EEECEC
-    width: 100%
+    width: 45%
     overflow: hidden
-    margin: 10px 0
+    margin: 10px 
     border: 1px solid rgb(211, 211, 211)
 
-    img
-      width: 90%
+    figure
+      height: 200px
+      width: 100%
+      margin: 0
+      img
+        // width: 90%
+        height: 100%
+
+    .titulo
+      height: 100px  
+      margin: 0
+      display: flex
+      align-items: center
+      justify-content: center
+      
+      h2
+        margin: 0
     
   .searchAbout
     text-decoration: underline
     color: #1D654B !important
     cursor: pointer
-    
+  
+  
+  @media screen and (max-width: 800px)
+    li
+      width: 90%  
 </style>

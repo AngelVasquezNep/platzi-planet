@@ -204,5 +204,10 @@ export default {
     img
       background: radial-gradient(red, #DC40A0,#FFFFFF, #FFFFFF)
       width: 100%
-  
+
+  @media screen and (max-width: 800px)
+    div
+      width: 100%  
+      margin: 0
+      padding: 0
 </style>

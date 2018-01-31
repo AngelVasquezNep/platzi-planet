@@ -90,7 +90,11 @@ export default {
       color: #fff
       background-color: #6F3E6E
 
-
+  @media screen and (max-width: 800px)
+    .cumple
+      width: 100%  
+      margin: 0
+      padding: 0
 
 
 </style>
