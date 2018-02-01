@@ -4,7 +4,7 @@
       p Este es el link de la imagen, compartelo con tus amigos 
       p {{this.item.links[0].href}}
     .botones
-      input(type="button" value="me gusta") 
+      input(type="button" value="me gusta" @click="addMegusta" :class="{megustaOk: megusta}")  
       input(type="button" value="comentar" @click="coment") 
       input(type="button" value="compartir" @click="compartir")
     .comentarios(v-show="mostrarComentario") 
@@ -28,7 +28,8 @@
         mostrarComentario: false,
         comentariohecho: [],
         newComent:{text:'', hora:0},
-        mostrarLink: false
+        mostrarLink: false,
+        megusta: false
       }
     },
     methods:{
@@ -53,6 +54,10 @@
       },
       removeComent(index){
         this.comentariohecho.splice(index,1)
+      },
+      addMegusta(){
+        this.megusta = true
+        console.log("It's ok" + this.megusta )
       }
     }
   }  
@@ -73,6 +78,15 @@
         
       p
         margin: 0
+    
+    .megustaOk
+      background: rgb(59, 252, 70) !important
+      color: #000 !important
+      border-bottom: 4px solid rgb(14, 123, 21) !important
+      box-shadow: 0px 2px 5px 2px #808080
+      cursor: pointer
+      outline: 0
+      transform: scale(.95)
 
     input[type="button"]
       font-size: .9em
@@ -85,6 +99,7 @@
       border-radius: 4px
       border-bottom: 4px solid #fff
       background: #fff
+      transition: all .1s
 
       &:hover, &:focus
         background: rgb(255, 30, 107)
@@ -95,7 +110,7 @@
         cursor: pointer
         outline: 0
       &:active
-        transform: scale(.95)
+        transform: scale(1.2)
 
     input[type="text"]
       width: 91%
