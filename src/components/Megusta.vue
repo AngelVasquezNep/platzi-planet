@@ -75,7 +75,7 @@
         margin: 0
 
     input[type="button"]
-      font-size: 1em
+      font-size: .9em
       font-family: 'Montserrat', sans-serif
       width: 20%
       border-style: none

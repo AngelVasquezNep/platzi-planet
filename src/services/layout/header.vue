@@ -1,9 +1,9 @@
 <template lang="pug">
   //- div(@scroll="scroled")
   #particles-js
+    img.nave(src='@/assets/nave.svg' )
     figure
       img(src="@/assets/nasaLogo.png")
-    img.nave(src='@/assets/nave.svg' )
 
     nav
       ul
@@ -58,25 +58,28 @@ export default {
         padding: 10px
         cursor: pointer
         transition: all .5s
+        outline: none
 
-        &:hover
+        &:hover, &:focus
           box-shadow: inset 0px -2px 0px 0px rgb(91, 16, 80)
           color: white
 
 
   .nave
-    // position: absolute
     width: 100px
+    padding: 10px
     animation: 15s naveOnSpace infinite 
 
 
   @keyframes naveOnSpace
     0%
       transform: translateY(-200px)
+    15%
+      transform: translateX(0px)
     25%
-      transform: translateY(150px) translateX(50px) rotate(45deg)
+      transform: translateX(0px)
     50%
-      transform: translateY(0px) translateX(0px) rotate(45deg)
+      transform: translateX(0px) rotate(45deg)
     55%
       transform: translateY(0px) translateX(1500px) rotate(45deg)
     85%
@@ -84,5 +87,14 @@ export default {
 
     100%
       transform: translateY(0px) translateX(-650px) rotate(225deg)
+
+  @media screen and (max-width: 800px)
+    #particles-js
+      display: block
+      height: 260px
+
+      nav
+        display: initial
+
 
 </style>

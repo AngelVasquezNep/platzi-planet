@@ -24,4 +24,8 @@ name: 'ppfooter'
     p
       font-size: 1em
       color: rgb(193, 247, 230)
+
+  @media screen and (max-width: 800px)
+    div
+      margin-top: 100px
 </style>
