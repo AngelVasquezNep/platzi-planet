@@ -5,7 +5,7 @@
     figure
       img(:src="item.links[0].href")
     //- p {{item.data[0].description}}
-
+    p Detalles
     p Para saber más: 
       span.searchAbout(
                    v-for="t in item.data[0].keywords",
@@ -45,7 +45,7 @@ export default {
     overflow: hidden
     margin: 10px 
     border: 1px solid rgb(211, 211, 211)
-
+    align-self: center
     figure
       height: 200px
       width: 100%

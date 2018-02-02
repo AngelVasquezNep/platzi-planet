@@ -1,13 +1,23 @@
 <template lang="pug">
   li(v-if="item.data[0].media_type=='video'")
     h2 Title: {{item.data[0].title}}
-    input(type="button" value="Ver video" @click="buscarVideo" v-show="mostrarbotton")
-    video(:src="video" v-if="changeVideo" controls)
+
+    input(type="button", 
+          value="Ver video", 
+          @click="buscarVideo", 
+          v-show="mostrarbotton")
+    
+    video(:src="video", 
+          v-if="changeVideo" 
+          controls, autoplay)
+
     p {{item.data[0].description}}
+    
     p Para saber más: 
       span.searchAbout(v-for="t in item.data[0].keywords",
-                   @click="searchAbout(t)",
-                   href="#") {{t}} | 
+                       @click="searchAbout(t)",
+                       href="#") {{t}} | 
+    
     megusta(:item="item")
     
 

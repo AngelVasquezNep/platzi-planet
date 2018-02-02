@@ -217,7 +217,7 @@ export default {
     // display: block
     margin: 0
 
-    .nullResult
+  .nullResult
     display: flex
     justify-content: center
     margin: 0 auto

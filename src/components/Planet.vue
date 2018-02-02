@@ -1,39 +1,35 @@
 <template lang="pug">
-  .container 
-    p(v-if="elementos.collection") 
-    img(v-if="elementos.collection"
-         :src="elementos.collection.items[0].href")
+  //- .container(v-if = "item.data[0].media_type=='image'") 
+  .container(v-if = "changes") 
+    
+    h2 Titulo
+    figure
+      img(:src="item.links[0].href")
+    .info
+      p {{item.data[0].description}}
+
 </template>
 
 <script>
 import nasa from '@/services/api/fetchEarth'
 
-
 export default {
   name: 'Planet',
   data(){
     return{
-      elementos: {},
-      datajson: {}
+      item: {},
+      changes: false
     }
   },
   created(){
-    // const id = this.item.data[0].nasa_id
     const id = this.$route.params.id
     const self = this
-    nasa.getById(id)
+    nasa.search(id)
       .then(json=> {
         console.log("Primer promesa")
-        this.elementos = json
-        console.log(this.elementos)
+        this.item = json.collection.items[0]
+        this.changes = true
       })
-      .then(()=>{
-        nasa.get(this.elementos.collection.items[this.elementos.collection.items.length - 1].href, function(json){
-          self.datajson = json
-          console.log(json)
-        })
-      })
-
   }
 }
 </script>
@@ -41,8 +37,38 @@ export default {
 <style lang="sass" scoped>
   .container
     width: 75%
-    display: block
+    display: inline-block
+    padding: 5px
+    // align-items: center
+    // justify-content: center
+    // background-color: #164e35
+    
+    h2 
+      background: #808080
+      color: #fff
+      margin: 0
+      padding: 15px 0
+      border-radius: 5px 5px 0 0 
 
-    img
-      width: 90%
+    figure  
+      padding: 0
+      margin: 0 auto
+      width: 100%
+      background: #808080
+
+      img
+        width: 80%
+    
+    .info
+      p
+        margin: 0
+        padding: 15px 0
+      background: #808080
+
+
+
+  @media screen and (max-width: 800px)
+    .container
+      width: 100%  
+
 </style>
