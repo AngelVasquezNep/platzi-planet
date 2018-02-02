@@ -41,19 +41,19 @@ export default {
   },
   methods: {
     buscarFoto(){
-      console.log("TODO OK")
-      nasa.cumple(this.fecha)
-        .then(json =>{
-          this.info = json
-        })
+      // console.log("TODO OK")
+      // nasa.cumple(this.fecha)
+      //   .then(json =>{
+      //     this.info = json
+      //   })
     }
   },
   mounted(){
-    nasa.cumple('')
-      .then(json=>{
-        this.info = json
-        this.changeInfo = true
-      })
+    // nasa.cumple('')
+    //   .then(json=>{
+    //     this.info = json
+    //     this.changeInfo = true
+    //   })
   }
 }
 </script>

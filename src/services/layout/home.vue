@@ -28,7 +28,13 @@
         h2 Lo sentimos, no hallamos lo que buscabas, intenta de nuevo.
         img(src="@/assets/invasion.png")
 
+
     ul(v-if="statusRes")
+      
+      .subir(v-if="statusRes") 
+        a(href="#") UP
+
+
       ppimages(v-for="item in resultado.collection.items",
               :item="item", :key="item.data[0].nasa_id", 
                 v-if="item.data[0].media_type=='image'", 
@@ -127,6 +133,25 @@ export default {
     &:focus
       outline: 0
 
+  .subir
+    width: 40px
+    height: 40px
+    margin: 10px
+    padding: 0
+    border-radius: 50%
+    position: fixed
+    bottom: 0
+    left: 0
+    background: rgba(185, 19, 205, .5)
+    display: flex
+    text-align: center
+    justify-content: center
+    align-items: center
+    a
+      margin: 0
+      color: #fff
+      text-decoration-style: none
+
   input
     margin: 10px
     font-size: 1.2em
@@ -192,7 +217,7 @@ export default {
     // display: block
     margin: 0
 
-  .nullResult
+    .nullResult
     display: flex
     justify-content: center
     margin: 0 auto

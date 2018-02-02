@@ -64,7 +64,7 @@ export default {
           box-shadow: inset 0px -2px 0px 0px rgb(91, 16, 80)
           color: white
 
-
+    
   .nave
     width: 100px
     padding: 10px

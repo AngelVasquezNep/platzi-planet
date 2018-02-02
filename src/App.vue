@@ -4,7 +4,7 @@
     ppheader
     
     .container
-      router-view      
+      router-view
       //- pphome
       //- ppcumple
       ppnoticias
@@ -73,17 +73,6 @@ a
   display: block
   height: 100px
   width: 25%
-
-
-
-
-
-
-
-
-
-
-
 
 
 

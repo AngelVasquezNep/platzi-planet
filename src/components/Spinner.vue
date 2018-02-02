@@ -10,7 +10,7 @@
 
 <style scoped>
 .loader {
-  color: #78c3f1;
+  color: #00c485;
   font-size: 20px;
   margin: 100px auto;
   width: 1em;
@@ -78,6 +78,7 @@
     box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
   }
 }
+
 
 
 </style>
