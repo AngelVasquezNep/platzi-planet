@@ -5,10 +5,14 @@
     figure
       img(:src="item.links[0].href")
     //- p {{item.data[0].description}}
+
     p Para saber más: 
-      span.searchAbout(v-for="t in item.data[0].keywords",
+      span.searchAbout(
+                   v-for="t in item.data[0].keywords",
                    @click="searchAbout(t)",
-                   href="#") {{t}} | 
+                   title="Da click para saber más acerca de este tema"
+                   ) {{t}} | 
+    
     megusta(:item="item")
 
 </template>

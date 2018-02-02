@@ -1,22 +1,44 @@
 <template lang="pug">
   div
+    p.alertMegusta(v-if="megusta") A ti y a toda la Galaxia les gusta esta imagen
+    
     .link(v-show="mostrarLink")
       p Este es el link de la imagen, compartelo con tus amigos 
       p {{this.item.links[0].href}}
+
     .botones
-      input(type="button" value="me gusta" @click="addMegusta" :class="{megustaOk: megusta}")  
-      input(type="button" value="comentar" @click="coment") 
-      input(type="button" value="compartir" @click="compartir")
+      input(type="button", 
+            value="me gusta", 
+            title="Me gusta",
+            @click="addMegusta", 
+            :class="{megustaOk: megusta}")  
+
+      input(type="button", 
+            value="comentar", 
+            title="Deja tu comentario",
+            @click="coment") 
+
+      input(type="button", 
+            value="compartir", 
+            title="Obten el link de la imagen",
+            @click="compartir")
+
     .comentarios(v-show="mostrarComentario") 
 
       div(v-for="(com, index) in comentariohecho", class="newComent") 
         p {{com.text}} 
         p(class="horario") Realizado a las: {{com.hora}}  
-        span(class="cancel" @click="removeComent(index)" ) x
+        span(class="cancel", 
+             @click="removeComent(index)",
+             title="Eliminar comentario" ) x
       
-      input(type="text" v-model="newComent.text" placeholder="Agregue su comentario")
+      input(type="text", 
+            v-model="newComent.text", 
+            placeholder="Agregue su comentario")
       
-      input.enviar(type="button" value="enviar" @click="addComentario")
+      input.enviar(type="button", 
+            value="enviar", 
+            @click="addComentario")
 </template>
 
 <script>
@@ -87,6 +109,12 @@
       cursor: pointer
       outline: 0
       transform: scale(.95)
+
+    .alertMegusta
+      margin: 0
+      padding: 0
+      background: rgb(67, 186, 209)
+      // color: #e36a25 !important
 
     input[type="button"]
       font-size: .9em
