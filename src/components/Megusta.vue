@@ -34,11 +34,13 @@
       
       input(type="text", 
             v-model="newComent.text", 
-            placeholder="Agregue su comentario")
+            placeholder="Agregue su comentario",
+            @keyup.enter="addComentario")
       
       input.enviar(type="button", 
             value="enviar", 
-            @click="addComentario")
+            @click="addComentario",
+            @keyup.enter="addComentario")
 </template>
 
 <script>

@@ -26,7 +26,6 @@ export default {
     const self = this
     nasa.search(id)
       .then(json=> {
-        console.log("Primer promesa")
         this.item = json.collection.items[0]
         this.changes = true
       })
