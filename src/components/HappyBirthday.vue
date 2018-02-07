@@ -10,7 +10,7 @@
       a(:href="info.hdurl" target="_blank") FULL HD
     
     iframe(:src='urlComputed', 
-          width='200', 
+          width='115', 
           height='28', 
           style='border:none;overflow:hidden', 
           scrolling='no', 

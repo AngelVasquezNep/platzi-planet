@@ -7,6 +7,9 @@
         h3
           a(:href="noticia.href", target="_blank") {{noticia.title}}
         p {{noticia.description}}
+        //- img(:src="noticia.img", v-if="noticia.img")
+        a(:href="noticia.href", target="_blank", v-if="noticia.img")
+          img(:src="noticia.img")
 
 
 
@@ -44,6 +47,8 @@
     background: rgba(93.2%, 93.7%, 93.7%, 0.1)
     margin-top: 5px
     margin-bottom: 5px
+  img 
+    width: 90%
 
   @media screen and (max-width: 800px)
     div
