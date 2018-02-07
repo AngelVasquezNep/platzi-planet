@@ -1,18 +1,21 @@
 export default [
   {
     title: "Bienvenidos a Platzi-planet",
-    description: "Aquí encontraras información súper interesante acerca de toda nuestra galaxia"
+    description: `¡Unete a nuestra comunidad! Somos los estudiantes
+                  que estamos construyendo el futuro.`,
+    href: "https://www.platzi.com"
   },
   {
-    title: "¿Cuánto planetas hay en realidad?",
-    description: "Descubrelo investigando acerca de 'Pluto'"
+    title: "Aprende a programa ¡es gratis!",
+    description: `Programar es como tener súper poderes,
+                  literalmente te tranforma, así que ¿qué esperas?
+                  obten los tuyos ahora mismo dando click al título.`,
+    href: "https://www.platzi.com/programacion"
   },
   {
-    title: "Bienvenidos a Platzi-planet",
-    description: "Aquí encontraras información súper interesante acerca de toda nuestra galaxia"
-  },
-  {
-    title: "Bienvenidos a Platzi-planet",
-    description: "Aquí encontraras información súper interesante acerca de toda nuestra galaxia"
-  },
+    title: "Aprende algo nuevo todos los días",
+    description: `También en Youtube tenemos muchísimo contenido 
+                  para todo el mundo.`,
+    href: "https://www.youtube.com/platzi"
+  }
 ]

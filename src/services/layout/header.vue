@@ -3,7 +3,8 @@
   #particles-js
     img.nave(src='@/assets/nave.svg' )
     figure
-      img(src="@/assets/nasaLogo.png")
+      a(href="https://www.nasa.gov/" target="_blank") 
+        img(src="@/assets/nasaLogo.png")
 
     nav
       ul

@@ -4,7 +4,8 @@
     h2 Enterate de lo más interesante en Platzi-Planet
     ul
       li(v-for="noticia in noticias")
-        h3 {{noticia.title}}
+        h3
+          a(:href="noticia.href", target="_blank") {{noticia.title}}
         p {{noticia.description}}
 
 

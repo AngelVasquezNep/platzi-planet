@@ -5,7 +5,7 @@
     figure(:class="{full: full}")
       img(:src="item.links[0].href", @click="fullImage")
     //- p {{item.data[0].description}}
-    p(@click="goToPlanet(item.data[0].nasa_id)") Go to Planet !
+    p.goplanet(@click="goToPlanet(item.data[0].nasa_id)") Go to Planet !
     p Para saber más: 
       span.searchAbout(
                    v-for="t in item.data[0].keywords",
@@ -78,7 +78,11 @@ export default {
       h2
         margin: 0
     
-  .searchAbout
+  .goplanet
+    margin: 10px
+    font-weight: 800
+
+  .searchAbout, .goplanet
     text-decoration: underline
     color: #1D654B !important
     cursor: pointer

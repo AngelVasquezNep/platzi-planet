@@ -1,8 +1,8 @@
 <template lang="pug">
   //- .container(v-if = "item.data[0].media_type=='image'") 
-  .container(v-if = "changes") 
+  .container(v-if = "changes && item.links[0].href") 
     
-    h2 Titulo
+    h2 Titul: {{item.data[0].title}}
     figure
       img(:src="item.links[0].href")
     .info

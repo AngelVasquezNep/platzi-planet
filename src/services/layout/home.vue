@@ -31,8 +31,7 @@
 
     ul(v-if="statusRes")
       
-      .subir(v-if="statusRes") 
-        a(href="#") UP
+      a.subir(v-if="statusRes & resultado.collection.items.length > 0", href="#") ^
 
 
       ppimages(v-for="item in resultado.collection.items",
@@ -61,7 +60,6 @@ export default {
       qbusqueda: '',
       statusRes: false,
       statusSpinner: false,
-      fullElements: 0,
       resultado: {}
     }
   },
@@ -143,14 +141,10 @@ export default {
     bottom: 0
     left: 0
     background: rgba(185, 19, 205, .5)
-    display: flex
-    text-align: center
-    justify-content: center
-    align-items: center
-    a
-      margin: 0
-      color: #fff
-      text-decoration-style: none
+    color: #fff
+    text-decoration: none 
+    font-size: 2em
+    font-weight: 700
 
   input
     margin: 10px
