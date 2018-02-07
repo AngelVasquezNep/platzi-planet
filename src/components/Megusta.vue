@@ -1,11 +1,9 @@
 <template lang="pug">
   div
-    p.alertMegusta(v-if="megusta") A ti y a toda la Galaxia les gusta esta imagen
+    p.alertMegusta(v-show="megusta") A ti y a toda la Galaxia les gusta esta imagen
+    //- iframe(:src='urlImage', width='132', height='28', style='border:none;overflow:hidden', scrolling='no', frameborder='0', allowtransparency='true')
+    a(:href="urlImage", target="_blank") Compartir 
     
-    .link(v-show="mostrarLink")
-      p Este es el link de la imagen, compartelo con tus amigos 
-      p {{this.item.links[0].href}}
-
     .botones
       input(type="button", 
             value="me gusta", 
@@ -46,14 +44,15 @@
 <script>
   export default {
     name: 'Megusta',
-    props:['item'],
+    props: ['item'],
     data(){
       return{
         mostrarComentario: false,
         comentariohecho: [],
         newComent:{text:'', hora:0},
         mostrarLink: false,
-        megusta: false
+        megusta: false,
+        urlOrigin: 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffacebook.com%2F&amp;src=sdkpreparse'
       }
     },
     methods:{
@@ -72,16 +71,26 @@
           this.newComent = {text:'', hora:0}
         }
       },
+      
       compartir(){
-        if(this.mostrarLink) return this.mostrarLink = false
-        if(!this.mostrarLink) return this.mostrarLink = true
+        
       },
       removeComent(index){
         this.comentariohecho.splice(index,1)
       },
       addMegusta(){
-        this.megusta = true
-        console.log("It's ok" + this.megusta )
+        this.megusta ? this.megusta = false : this.megusta = true
+      }
+    },
+    computed:{
+      urlImage(){
+        const self = this
+        let a = ''
+        function change () {
+          a = self.urlOrigin.replace('facebook.com%2F', 'images-assets.nasa.gov/image/PIA12235/PIA12235~thumb.jpg')
+        }
+        change()
+        return a
       }
     }
   }  

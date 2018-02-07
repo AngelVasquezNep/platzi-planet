@@ -1,7 +1,7 @@
 <template lang="pug">
   
   div
-    h2 Enterate de lo más interesante en Platzi-Planet
+    h2 Enterate de lo más interesante de Platzi-Planet
     ul
       li(v-for="noticia in noticias")
         h3

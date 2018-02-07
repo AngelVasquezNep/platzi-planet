@@ -12,7 +12,6 @@
                    @click="searchAbout(t)",
                    title="Da click para saber más acerca de este tema"
                    ) {{t}} | 
-    
     megusta(:item="item")
 
 </template>
@@ -26,7 +25,7 @@ export default {
   props:['item'],
   data(){
     return {
-      full: false
+      full: false,
     }
   },
   components:{ Megusta },

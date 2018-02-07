@@ -18,7 +18,7 @@
                        @click="searchAbout(t)",
                        href="#") {{t}} | 
     
-    megusta(:item="item")
+    megusta()
     
 
 
