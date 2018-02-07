@@ -16,11 +16,6 @@
 <script>
 export default {
   name:'ppheader',
-  methods:{
-    scroled(ev){
-      console.log(window.scrollY)
-    }
-  }
 }
 </script>
 

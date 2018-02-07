@@ -20,6 +20,10 @@ import Pphome from '@/services/layout/home.vue'
 import Ppnoticias from '@/services/layout/noticias.vue'
 import Ppcumple from '@/services/layout/Cumple.vue'
 
+// window.addEventListener("scroll", function(){
+//   console.log(window.scrollY)
+//   })
+
 
 export default {
   name: 'app',
