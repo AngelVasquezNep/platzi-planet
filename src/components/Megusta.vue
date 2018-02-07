@@ -2,8 +2,6 @@
   div
     p.alertMegusta(v-show="megusta") A ti y a toda la Galaxia les gusta esta imagen
     //- iframe(:src='urlImage', width='132', height='28', style='border:none;overflow:hidden', scrolling='no', frameborder='0', allowtransparency='true')
-    a(:href="urlImage", target="_blank") Compartir 
-    
     .botones
       input(type="button", 
             value="me gusta", 
@@ -16,10 +14,7 @@
             title="Deja tu comentario",
             @click="coment") 
 
-      input(type="button", 
-            value="compartir", 
-            title="Obten el link de la imagen",
-            @click="compartir")
+      a(:href="urlImage", target="_blank") Compartir 
 
     .comentarios(v-show="mostrarComentario") 
 
@@ -87,7 +82,8 @@
         const self = this
         let a = ''
         function change () {
-          a = self.urlOrigin.replace('facebook.com%2F', 'images-assets.nasa.gov/image/PIA12235/PIA12235~thumb.jpg')
+          // a = self.urlOrigin.replace('facebook.com%2F', 'images-assets.nasa.gov/image/PIA12235/PIA12235~thumb.jpg')
+          a = self.urlOrigin.replace('https%3A%2F%2Ffacebook.com%2F', self.item.links[0].href)
         }
         change()
         return a
@@ -127,7 +123,7 @@
       background: rgb(67, 186, 209)
       // color: #e36a25 !important
 
-    input[type="button"]
+    input[type="button"], a
       font-size: .9em
       font-family: 'Montserrat', sans-serif
       width: 20%
@@ -138,11 +134,12 @@
       border-radius: 4px
       border-bottom: 4px solid #fff
       background: #fff
+      text-decoration: none
       transition: all .1s
 
       &:hover, &:focus
         background: rgb(255, 30, 107)
-        color: rgb(245, 245, 245)
+        color: rgb(245, 245, 245) 
         border-bottom: 4px solid rgb(138, 20, 60)
         background: rgb(199, 28, 86)
         box-shadow: 0px 2px 5px 2px #808080
@@ -150,6 +147,10 @@
         outline: 0
       &:active
         transform: scale(1.2)
+    a
+      color: #fff
+      background: #475AB1
+      border-bottom: 1px solid #475AB1
 
     input[type="text"]
       width: 91%
@@ -217,18 +218,18 @@
   
   @media screen and (max-width: 1200px)
     div
-      input[type="button"]
+      input[type="button"], a
         font-size: .8em
         width: 30%
 
   @media screen and (max-width: 800px)
     div
-      input[type="button"]
+      input[type="button"], a
         font-size: .9em
 
   @media screen and (max-width: 500px)
     div
-      input[type="button"]
+      input[type="button"], a
         font-size: .8em
 
 

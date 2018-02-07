@@ -7,14 +7,17 @@
       img(:src="item.links[0].href")
     .info
       p {{item.data[0].description}}
+    megusta(:item="item")
 
 </template>
 
 <script>
 import nasa from '@/services/api/fetchEarth'
+import Megusta from '@/components/Megusta.vue'
 
 export default {
   name: 'Planet',
+  components: { Megusta },
   data(){
     return{
       item: {},

@@ -18,7 +18,6 @@
                        @click="searchAbout(t)",
                        href="#") {{t}} | 
     
-    megusta()
     
 
 

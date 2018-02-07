@@ -9,7 +9,7 @@
     nav
       ul
         router-link.enlace(to="/") Home
-        router-link.enlace(to="cumple") Cumpleaños
+        router-link.enlace(to="/cumple") Cumpleaños
         //- li: a(href="#") Home
         //- li: a(href="#") Cumpleaños
 </template>
