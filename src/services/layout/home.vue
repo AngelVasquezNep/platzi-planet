@@ -15,9 +15,9 @@
         label(for="videos" ) Videos
         
         input(type="radio" id="imagenes" name="media" value="Imagenes" v-model="formulario")
-        label(for="imagenes" ) Imagenes
+        label(for="imagenes" ) Imágenes
       p(v-if="statusRes") Total Videos: {{totalVideos}} 
-      p(v-if="statusRes") Total Imagenes: {{totalImages}} 
+      p(v-if="statusRes") Total Imágenes: {{totalImages}} 
       
 
     

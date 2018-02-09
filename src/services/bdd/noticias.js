@@ -1,16 +1,16 @@
 export default [
   {
     title: "Bienvenidos a Platzi-planet",
-    description: `¡Unete a nuestra comunidad! Somos los estudiantes
+    description: `¡Únete a nuestra comunidad! Somos los estudiantes
                   que estamos construyendo el futuro.`,
     href: "https://www.platzi.com",
     img: `src/assets/platzi.png`
   },
   {
     title: "Aprende a programar ¡es gratis!",
-    description: `Programar es como tener súper poderes,
-                  literalmente te tranforma, así que ¿qué esperas?
-                  obten los tuyos ahora mismo dando click al título.`,
+    description: `Programar es como tener súper poderes, 
+                  literalmente te transforma, así que ¿qué esperas? 
+                  obtén los tuyos ahora mismo dando click al título.`,
     href: "https://www.platzi.com/programacion"
   },
   {

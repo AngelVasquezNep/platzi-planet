@@ -1,7 +1,7 @@
 <template lang="pug">
   .happy
     h2 {{info.title}}
-    img(:src="info.url")
+    img(:src="info.url", onAbort="alert('ha cancelado la carga de la imagen')")
     .pieDePag
       p.author {{info.copyright}} @copyright
       p.fecha {{info.date}}
@@ -10,7 +10,7 @@
       a(:href="info.hdurl" target="_blank") FULL HD
     
     iframe(:src='urlComputed', 
-          width='115', 
+          width='125', 
           height='28', 
           style='border:none;overflow:hidden', 
           scrolling='no', 

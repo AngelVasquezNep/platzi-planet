@@ -14,7 +14,7 @@
             title="Deja tu comentario",
             @click="coment") 
 
-      a(:href="urlImage", target="_blank") Compartir 
+      a(:href="urlImage", target="_blank") compartir 
 
     .comentarios(v-show="mostrarComentario") 
 
