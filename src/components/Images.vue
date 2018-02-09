@@ -87,6 +87,11 @@ export default {
     cursor: pointer
   
   
+  @media screen and (max-width: 950px)
+    li
+      width: 90%
+      figure  
+        height: initial
   @media screen and (max-width: 800px)
     li
       width: 90%  

@@ -216,11 +216,6 @@
       &:active
         transform: scale(.9)
   
-  @media screen and (max-width: 1200px)
-    div
-      input[type="button"], a
-        font-size: .8em
-        width: 30%
 
   @media screen and (max-width: 800px)
     div

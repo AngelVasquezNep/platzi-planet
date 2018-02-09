@@ -2,7 +2,7 @@
   //- .container(v-if = "item.data[0].media_type=='image'") 
   .container(v-if = "changes && item.links[0].href") 
     
-    h2 Titul: {{item.data[0].title}}
+    h1 Titul: {{item.data[0].title}}
     figure
       img(:src="item.links[0].href")
     .info
@@ -45,9 +45,9 @@ export default {
     // justify-content: center
     // background-color: #164e35
     
-    h2 
-      background: #808080
-      color: #fff
+    h1 
+      background: #dad9d9
+      color: #000
       margin: 0
       padding: 15px 0
       border-radius: 5px 5px 0 0 
@@ -56,7 +56,7 @@ export default {
       padding: 0
       margin: 0 auto
       width: 100%
-      background: #808080
+      background: #dad9d9
 
       img
         width: 80%
@@ -65,7 +65,7 @@ export default {
       p
         margin: 0
         padding: 15px 0
-      background: #808080
+        background: #dad9d9
 
 
 
