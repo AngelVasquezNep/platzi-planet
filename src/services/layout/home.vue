@@ -1,7 +1,11 @@
 <template lang="pug">
   div
     .formulario
+
+      //- Ppsearch(:resultado="resultado", @search-planet="searchPlanet")
       
+      //- SEARCH
+
       h1 ¡Bienvenido a Platzi-Planet!
     
       form(@submit.prevent="busqueda", )
@@ -19,9 +23,9 @@
       p(v-if="statusRes") Total Videos: {{totalVideos}} 
       p(v-if="statusRes") Total Imágenes: {{totalImages}} 
       
+      //- END SEARCH
 
     
-    spinner(v-show="statusSpinner")
 
 
     .message(v-if="changePage")
@@ -29,15 +33,19 @@
       img(src="@/assets/elon-musk.jpg")
 
 
+
+    //- RESULTS
+
+
     .nullResult(v-if="statusRes")
       div(v-if="!resultado.collection.items.length")
         h2 Lo sentimos, no hallamos lo que buscabas, intenta de nuevo.
         img(src="@/assets/invasion.png")
 
+    spinner(v-show="statusSpinner")
 
     ul(v-if="statusRes")
       
-      a.subir(v-if="statusRes & resultado.collection.items.length > 0", href="#") ^
 
 
       ppimages(v-for="item in resultado.collection.items",
@@ -48,9 +56,16 @@
               :item="item", :key="item.data[0].nasa_id", 
                 v-if="item.data[0].media_type=='video'", 
                 v-show="formulario == 'Videos'")
+    
+
+    //- END RESULTS
+
+
 </template>
 
 <script>
+
+import Ppsearch from '@/components/Search.vue'
 import nasa from '@/services/api/fetchEarth.js'
 import Ppimages from '@/components/Images.vue'
 import Ppvideo from '@/components/Video.vue'
@@ -70,7 +85,7 @@ export default {
       changePage:true
     }
   },
-  components:{ Ppimages, Ppvideo, Spinner },
+  components:{ Ppimages, Ppvideo, Spinner, Ppsearch },
   methods:{
     busqueda(){
       this.changePage = false
@@ -84,6 +99,9 @@ export default {
           this.statusRes = true
           this.qbusqueda = ''
         })
+    },
+    searchPlanet(q){
+      console.log("llego " + q)
     }
   },
   computed:{
@@ -155,21 +173,6 @@ export default {
       width: 100%
 
 
-  .subir
-    width: 40px
-    height: 40px
-    margin: 10px
-    padding: 0
-    border-radius: 50%
-    position: fixed
-    bottom: 0
-    left: 0
-    background: rgba(185, 19, 205, .5)
-    color: #fff
-    text-decoration: none 
-    font-size: 2em
-    font-weight: 700
-    z-index: 10
 
   input
     margin: 10px

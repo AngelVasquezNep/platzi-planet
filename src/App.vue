@@ -5,9 +5,9 @@
     
     .container
       router-view
+      ppnoticias
       //- pphome
       //- ppcumple
-      ppnoticias
 
     ppfooter
 
