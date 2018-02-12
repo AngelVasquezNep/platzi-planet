@@ -137,16 +137,18 @@
       text-decoration: none
       transition: all .1s
 
-      &:hover, &:focus
+      &:hover 
         background: rgb(255, 30, 107)
         color: rgb(245, 245, 245) 
         border-bottom: 4px solid rgb(138, 20, 60)
         background: rgb(199, 28, 86)
         box-shadow: 0px 2px 5px 2px #808080
         cursor: pointer
-        outline: 0
       &:active
         transform: scale(1.2)
+      &:focus
+        outline: 0
+
     a
       color: #fff
       background: #475AB1
@@ -154,7 +156,7 @@
 
     input[type="text"]
       width: 91%
-      font-size: 1.2em
+      font-size: 1.1em
       margin: 5px
       padding: 5px
       font-family: 'Montserrat', sans-serif
