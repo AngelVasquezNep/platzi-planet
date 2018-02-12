@@ -2,8 +2,8 @@
   li(v-if="item.data[0].media_type=='image'")
     .titulo
       h2 Title: {{item.data[0].title}}
-    figure(:class="{full: full}")
-      img(:src="item.links[0].href", @click="fullImage")
+    figure
+      img(:src="item.links[0].href")
     //- p {{item.data[0].description}}
     p.goplanet(@click="goToPlanet(item.data[0].nasa_id)") Go to Planet !
     p Para saber más: 
@@ -25,7 +25,6 @@ export default {
   props:['item'],
   data(){
     return {
-      full: false,
     }
   },
   components:{ Megusta },
@@ -33,10 +32,6 @@ export default {
     
     searchAbout(t){
       this.$bus.$emit('search-about', t)
-    },
-
-    fullImage(){
-      this.full ? this.full = false : this.full = true
     },
 
     goToPlanet(id){
@@ -51,21 +46,19 @@ export default {
   
   li
     background: #EEECEC
-    width: 45%
+    width: 80%
     overflow: hidden
     margin: 10px 
     border: 1px solid rgb(211, 211, 211)
     align-self: center
     figure
-      height: 200px
+      height: 350px
       width: 100%
       margin: 0
       img
         // width: 90%
         height: 100%
 
-    figure.full
-      height: initial
 
     .titulo
       min-height: 100px  
@@ -87,11 +80,25 @@ export default {
     cursor: pointer
   
   
+  
+  @media screen and (max-width: 1024px)
+    li
+      width: 100%
+      figure
+        width: 100%
+        height: auto
+        img
+          width: 90%
+          height: auto
+
+
   @media screen and (max-width: 950px)
     li
       width: 90%
       figure  
         height: initial
+
+
   @media screen and (max-width: 800px)
     li
       width: 90%  

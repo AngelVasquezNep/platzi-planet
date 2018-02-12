@@ -118,7 +118,7 @@ export default {
   div
     margin: 10px
     padding: 5px 
-    width: 75%
+    width: 70%
     background: #FFFFFF
 
   h1
@@ -247,6 +247,10 @@ export default {
     img
       background: radial-gradient(red, #DC40A0,#FFFFFF, #FFFFFF)
       width: 100%
+
+  @media screen and (max-width: 1024px)
+    div
+      width: 65%
 
   @media screen and (max-width: 800px)
     div

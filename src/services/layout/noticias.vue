@@ -31,7 +31,7 @@
 <style lang="sass" scoped>
 
   div
-    width: 25%
+    width: 30%
     margin: 10px
     background: #ffff
 
@@ -49,6 +49,11 @@
     margin-bottom: 5px
   img 
     width: 90%
+
+  @media screen and (max-width: 1024px)
+    div
+      width: 35%
+
 
   @media screen and (max-width: 800px)
     div
