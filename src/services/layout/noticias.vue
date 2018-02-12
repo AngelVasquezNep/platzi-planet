@@ -9,20 +9,20 @@
         p {{noticia.description}}
         //- img(:src="noticia.img", v-if="noticia.img")
         a(:href="noticia.href", target="_blank", v-if="noticia.img")
-          img(:src="noticia.img")
+          img(:src="noticia.img", alt="")
 
 
 
 </template>
 
 <script>
-  import Noticias from '@/services/bdd/noticias.js'
+  import noticias from '@/services/bdd/noticias.js'
 
   export default {
     name: 'noticias',
     data(){
       return {
-        noticias: Noticias
+         noticias
       }
     }
   }

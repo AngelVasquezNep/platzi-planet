@@ -1,23 +1,16 @@
 <template lang="pug">
-  //- .container(v-if = "item.data[0].media_type=='image'") 
-  .container(v-if = "changes && item.links[0].href") 
-    
-    h1 Titul: {{item.data[0].title}}
-    figure
-      img(:src="item.links[0].href")
-    .info
-      p {{item.data[0].description}}
-    megusta(:item="item")
+
+  ppimages(v-if="changes", :item="item")
 
 </template>
 
 <script>
 import nasa from '@/services/api/fetchEarth'
-import Megusta from '@/components/Megusta.vue'
+import Ppimages from '@/components/Images.vue'
 
 export default {
   name: 'Planet',
-  components: { Megusta },
+  components: {Ppimages },
   data(){
     return{
       item: {},
@@ -37,40 +30,5 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  .container
-    width: 75%
-    display: inline-block
-    padding: 5px
-    // align-items: center
-    // justify-content: center
-    // background-color: #164e35
-    
-    h1 
-      background: #dad9d9
-      color: #000
-      margin: 0
-      padding: 15px 0
-      border-radius: 5px 5px 0 0 
-
-    figure  
-      padding: 0
-      margin: 0 auto
-      width: 100%
-      background: #dad9d9
-
-      img
-        width: 80%
-    
-    .info
-      p
-        margin: 0
-        padding: 15px 0
-        background: #dad9d9
-
-
-
-  @media screen and (max-width: 800px)
-    .container
-      width: 100%  
 
 </style>

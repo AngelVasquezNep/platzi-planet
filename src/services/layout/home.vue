@@ -169,6 +169,7 @@ export default {
     text-decoration: none 
     font-size: 2em
     font-weight: 700
+    z-index: 10
 
   input
     margin: 10px
