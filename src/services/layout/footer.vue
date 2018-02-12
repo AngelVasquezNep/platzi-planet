@@ -27,5 +27,5 @@ name: 'ppfooter'
 
   @media screen and (max-width: 800px)
     div
-      margin-top: 100px
+      margin-top: 20px
 </style>

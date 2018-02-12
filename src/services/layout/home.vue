@@ -23,6 +23,12 @@
     
     spinner(v-show="statusSpinner")
 
+
+    .message(v-if="changePage")
+      h2 THE SPACE IS YOURS
+      img(src="@/assets/elon-musk.jpg")
+
+
     .nullResult(v-if="statusRes")
       div(v-if="!resultado.collection.items.length")
         h2 Lo sentimos, no hallamos lo que buscabas, intenta de nuevo.
@@ -60,12 +66,14 @@ export default {
       qbusqueda: '',
       statusRes: false,
       statusSpinner: false,
-      resultado: {}
+      resultado: {},
+      changePage:true
     }
   },
   components:{ Ppimages, Ppvideo, Spinner },
   methods:{
     busqueda(){
+      this.changePage = false
       this.statusRes = false
       this.statusSpinner = true
       nasa.search(this.qbusqueda)
@@ -130,6 +138,22 @@ export default {
     border-style: none
     &:focus
       outline: 0
+
+  .message
+    margin: 0 auto
+    background: #E7E9EE
+    background: linear-gradient(180deg, #E7E9EE, #fff)
+    width: auto
+    text-align: center
+    h2 
+      font-family: 'Montserrat', sans-serif
+      font-weight: 700
+      margin: 0
+      padding: 20px 0
+      font-size: 5rem
+    img 
+      width: 100%
+
 
   .subir
     width: 40px
