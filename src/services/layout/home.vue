@@ -37,25 +37,25 @@
     //- RESULTS
 
 
-    .nullResult(v-if="statusRes")
-      div(v-if="!resultado.collection.items.length")
-        h2 Lo sentimos, no hallamos lo que buscabas, intenta de nuevo.
-        img(src="@/assets/invasion.png")
+    //- .nullResult(v-if="statusRes")
+    //-   div(v-if="!resultado.collection.items.length")
+    //-     h2 Lo sentimos, no hallamos lo que buscabas, intenta de nuevo.
+    //-     img(src="@/assets/invasion.png")
 
-    spinner(v-show="statusSpinner")
+    //- spinner(v-show="statusSpinner")
 
-    ul(v-if="statusRes")
+    //- ul(v-if="statusRes")
       
 
 
-      ppimages(v-for="item in resultado.collection.items",
-              :item="item", :key="item.data[0].nasa_id", 
-                v-if="item.data[0].media_type=='image'", 
-                v-show="formulario == 'Imagenes'")
-      ppvideo(v-for="item in resultado.collection.items",
-              :item="item", :key="item.data[0].nasa_id", 
-                v-if="item.data[0].media_type=='video'", 
-                v-show="formulario == 'Videos'")
+    //-   ppimages(v-for="item in resultado.collection.items",
+    //-           :item="item", :key="item.data[0].nasa_id", 
+    //-             v-if="item.data[0].media_type=='image'", 
+    //-             v-show="formulario == 'Imagenes'")
+    //-   ppvideo(v-for="item in resultado.collection.items",
+    //-           :item="item", :key="item.data[0].nasa_id", 
+    //-             v-if="item.data[0].media_type=='video'", 
+    //-             v-show="formulario == 'Videos'")
     
 
     //- END RESULTS
@@ -144,19 +144,19 @@ export default {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600
 
-  .formulario
-    display: block
-    margin: 0 auto
-    background: #E7E9EE
-    width: 100%
-    padding: 2em 0
+  // .formulario
+  //   display: block
+  //   margin: 0 auto
+  //   background: #E7E9EE
+  //   width: 100%
+  //   padding: 2em 0
 
-  .buscador
-    padding: 5px 10px
-    border-radius: 10px
-    border-style: none
-    &:focus
-      outline: 0
+  // .buscador
+  //   padding: 5px 10px
+  //   border-radius: 10px
+  //   border-style: none
+  //   &:focus
+  //     outline: 0
 
   .message
     margin: 0 auto
@@ -175,83 +175,83 @@ export default {
 
 
 
-  input
-    margin: 10px
-    font-size: 1.2em
-    font-family: 'Montserrat', sans-serif
+  // input
+  //   margin: 10px
+  //   font-size: 1.2em
+  //   font-family: 'Montserrat', sans-serif
 
-  input[type="submit"]
-    color: #fff
-    border-radius: 5px
-    border-style: none
-    padding: 5px
-    border-bottom: 3px solid #E6E8EE
-    background-color: #E6E8EE
-    color: #000
-    transition: .2s
-    width: 30%
+  // input[type="submit"]
+  //   color: #fff
+  //   border-radius: 5px
+  //   border-style: none
+  //   padding: 5px
+  //   border-bottom: 3px solid #E6E8EE
+  //   background-color: #E6E8EE
+  //   color: #000
+  //   transition: .2s
+  //   width: 30%
     
-    &:hover, &:focus
-      outline: 0
-      box-shadow: 0px 2px 3px 2px #808080
-      background-color: #0A8898
-      border-bottom: 3px solid #808080
-      color: #fff
-    &:active
-      transform: scale(.95)
+  //   &:hover, &:focus
+  //     outline: 0
+  //     box-shadow: 0px 2px 3px 2px #808080
+  //     background-color: #0A8898
+  //     border-bottom: 3px solid #808080
+  //     color: #fff
+  //   &:active
+  //     transform: scale(.95)
 
-  input[type="radio"]
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+  // input[type="radio"]
+  //   -webkit-appearance: none;
+  //   -moz-appearance: none;
+  //   appearance: none;
 
-    border-radius: 50%;
-    width: 15px;
-    height: 15px;
+  //   border-radius: 50%;
+  //   width: 15px;
+  //   height: 15px;
 
-    border: 2px solid #999;
-    transition: 0.2s all linear;
-    outline: none;
+  //   border: 2px solid #999;
+  //   transition: 0.2s all linear;
+  //   outline: none;
 
-    margin: 0 
+  //   margin: 0 
 
-    &:checked
-      border: 5px solid #282F30;
+  //   &:checked
+  //     border: 5px solid #282F30;
 
-    &:active
-      background-color: white;
-      color: black;
-      outline: 1px solid black;
+  //   &:active
+  //     background-color: white;
+  //     color: black;
+  //     outline: 1px solid black;
   
-  label
-    margin: 0 15px
+  // label
+  //   margin: 0 15px
 
-  ul
-    overflow-y: scroll
-    overflow-x: hidden
-    max-height: 150vh
-    padding: 4px
+  // ul
+  //   overflow-y: scroll
+  //   overflow-x: hidden
+  //   max-height: 150vh
+  //   padding: 4px
 
-  p
-    display: inline-flex
-    margin: 15px
+  // p
+  //   display: inline-flex
+  //   margin: 15px
 
-  li
-    // display: block
-    margin: 0
+  // li
+  //   // display: block
+  //   margin: 0
 
-  .nullResult
-    display: flex
-    justify-content: center
-    margin: 0 auto
-    width: 90%
-    div
-      h2
-       font-weight: 600
+  // .nullResult
+  //   display: flex
+  //   justify-content: center
+  //   margin: 0 auto
+  //   width: 90%
+  //   div
+  //     h2
+  //      font-weight: 600
     
-    img
-      background: radial-gradient(red, #DC40A0,#FFFFFF, #FFFFFF)
-      width: 100%
+  //   img
+  //     background: radial-gradient(red, #DC40A0,#FFFFFF, #FFFFFF)
+  //     width: 100%
 
   @media screen and (max-width: 1024px)
     div

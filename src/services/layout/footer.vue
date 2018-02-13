@@ -17,21 +17,23 @@ name: 'ppfooter'
   div
     display: flex
     align-items: center
-    flex-direction: column
+    // flex-direction: column
     justify-content: center
-    background: rgb(70, 175, 241)
+    background: linear-gradient(180deg, #E7E9EE, #202A90)
     margin-top: 5px
     margin-bottom: 0
+    line-height: 100px
     font-family: 'Montserrat', sans-serif;
 
     p
       text-align: center
       padding: 0px 20px
       font-size: 1.2rem
-      color: rgb(193, 247, 230)
+      margin: 5px
+      color: #5b1050
 
       a
-       color: rgb(193, 247, 230)
+        color: #5b1050
 
 
   @media screen and (max-width: 800px)

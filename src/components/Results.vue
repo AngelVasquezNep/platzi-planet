@@ -126,7 +126,18 @@ export default {
       font-weight: 700
       font-size: 3rem
 
-
+  .nullResult
+    display: flex
+    justify-content: center
+    margin: 0 auto
+    width: 90%
+    div
+      h2
+       font-weight: 600
+    
+    img
+      background: radial-gradient(red, #DC40A0,#E7E9EE, #E7E9EE)
+      width: 100%
 
 
   .subir
