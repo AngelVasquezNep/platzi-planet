@@ -1,6 +1,7 @@
 <template lang="pug">
-
-    //- p(@click="volver") Volver
+  .planet
+    h2 Sigue buscando
+    h3.back(@click="volver") ⇐ Volver
     ppimages(v-if="changes", :item="item")
 
 </template>
@@ -36,5 +37,15 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+
+.planet
+  width: 100%
+
+  .back
+    font-weight: 700
+    cursor: pointer
+
+    &:hover
+      color: #D61382
 
 </style>

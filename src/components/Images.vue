@@ -48,7 +48,7 @@ export default {
     background: #EEECEC
     width: 80%
     overflow: hidden
-    margin: 10px 
+    margin: 10px 0
     border: 1px solid rgb(211, 211, 211)
     align-self: center
     figure
@@ -71,7 +71,7 @@ export default {
         margin: 0
     
   .goplanet
-    margin: 10px
+    margin: 10px 0
     font-weight: 800
 
   .searchAbout, .goplanet

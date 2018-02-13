@@ -1,6 +1,6 @@
 <template lang="pug">
   li(v-if="item.data[0].media_type=='video'")
-    h2 Title: {{item.data[0].title}}
+    h2.titulo Title: {{item.data[0].title}}
 
     input(type="button", 
           value="Ver video", 
@@ -9,7 +9,7 @@
     
     video(:src="video", 
           v-if="changeVideo" 
-          controls, autoplay)
+          autoplay, controls)
 
     p {{item.data[0].description}}
     
@@ -59,7 +59,7 @@ export default {
 <style lang="sass" scoped>
   li
     background: #EEECEC
-    width: 100%
+    width: 80%
     overflow: hidden
     margin: 10px 0
     border: 1px solid rgb(211, 211, 211)
@@ -67,6 +67,14 @@ export default {
     video
       width: 100% 
       background: rgb(7%, 40.2%, 38.4%) 
+
+
+    .titulo
+      min-height: 100px  
+      margin: 0
+      display: flex
+      align-items: center
+      justify-content: center
 
     input
       font-size: 1.2em
@@ -89,5 +97,9 @@ export default {
     text-decoration: underline
     color: #1D654B !important
     cursor: pointer
+
+  @media screen and (max-width: 800px)
+    li
+      width: 90%  
 
 </style>

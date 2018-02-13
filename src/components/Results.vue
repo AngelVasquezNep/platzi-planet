@@ -1,12 +1,36 @@
 <template lang="pug">
   .results
 
-    //- ppsearch(:resultado="resultado", @search-planet="searchPlanet")
     .newSearch
       h2 Nos alegra tenerte en nuestro espacio
-      p Vamos por otra busqueda
-      router-link.enlace(to="/") Nueva Busqueda
+      router-link.enlace(to="/") Vamos por otra busqueda
     
+
+
+    form()
+      input(type="radio",
+            id="videos",
+            name="media",
+            value="Videos",
+            v-model="formulario")
+      
+      label(for="videos" ) Videos
+      
+      input(type="radio",
+            id="imagenes",
+            name="media", 
+            value="Imagenes", 
+            v-model="formulario")
+      
+      label(for="imagenes" ) Imágenes
+    
+    p(v-if="resultado.collection") Total videos encontrados: {{totalVideos}} 
+    p(v-if="resultado.collection") Total imágenes encontrados: {{totalImages}}
+
+
+
+
+
     spinner(v-show="statusSpinner")
 
     .nullResult(v-if="statusRes")
@@ -126,6 +150,10 @@ export default {
       font-weight: 700
       font-size: 3rem
 
+  .enlace
+    font-size: 1.1rem
+    font-weight: 600
+
   .nullResult
     display: flex
     justify-content: center
@@ -156,6 +184,32 @@ export default {
     font-weight: 700
     z-index: 10
 
+
+  input[type="radio"]
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+
+    border: 2px solid #999;
+    transition: 0.2s all linear;
+    outline: none;
+
+    margin: 0 
+
+    &:checked
+      border: 5px solid #282F30;
+
+    &:active
+      background-color: white;
+      color: black;
+      outline: 1px solid black;
+  
+  label
+    margin: 0 15px
 
 @media screen and (max-width: 800px)
   .results
