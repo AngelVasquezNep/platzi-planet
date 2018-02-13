@@ -1,6 +1,7 @@
 <template lang="pug">
 
-  ppimages(v-if="changes", :item="item")
+    //- p(@click="volver") Volver
+    ppimages(v-if="changes", :item="item")
 
 </template>
 
@@ -25,6 +26,11 @@ export default {
         this.item = json.collection.items[0]
         this.changes = true
       })
+  },
+  methods:{
+    volver(){
+      window.history.go(-1)
+    }
   }
 }
 </script>

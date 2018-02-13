@@ -1,10 +1,12 @@
 <template lang="pug">
   .results
 
-    ppsearch(:resultado="resultado", @search-planet="searchPlanet")
-
-    //- router-link.enlace(to="/") Nueva Busqueda
-
+    //- ppsearch(:resultado="resultado", @search-planet="searchPlanet")
+    .newSearch
+      h2 Nos alegra tenerte en nuestro espacio
+      p Vamos por otra busqueda
+      router-link.enlace(to="/") Nueva Busqueda
+    
     spinner(v-show="statusSpinner")
 
     .nullResult(v-if="statusRes")
@@ -110,10 +112,19 @@ export default {
 
 <style lang="sass" scoped>
 
+.results
+  width: 70%
 
+  .newSearch
+    background: linear-gradient(180deg, #EEEBEB, #E7E9EE)
+    margin: .6rem
+    padding: 2rem 0
+    border: 1px solid #d3d3d3
+    border-bottom: none
 
-
-
+    h2 
+      font-weight: 700
+      font-size: 3rem
 
 
 

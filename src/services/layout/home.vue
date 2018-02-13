@@ -1,27 +1,27 @@
 <template lang="pug">
   div
-    .formulario
-
-      Ppsearch(:resultado="resultado", @search-planet="searchPlanet")
-      
-      //- SEARCH
-
-      h1 ¡Bienvenido a Platzi-Planet!
+    Ppsearch(:resultado="resultado", @search-planet="searchPlanet")
     
-      form(@submit.prevent="busqueda", )
-        input.buscador(type="search" v-model="qbusqueda", 
-              placeholder="¿Qué quieres saber?",
-              required)
-        input(type="submit" value="Enviar")
+    //- .formulario
+  
+    //-   //- SEARCH
 
-      form()
-        input(type="radio" id="videos" name="media" value="Videos" v-model="formulario")
-        label(for="videos" ) Videos
+    //-   h1 ¡Bienvenido a Platzi-Planet!
+    
+    //-   form(@submit.prevent="busqueda", )
+    //-     input.buscador(type="search" v-model="qbusqueda", 
+    //-           placeholder="¿Qué quieres saber?",
+    //-           required)
+    //-     input(type="submit" value="Enviar")
+
+    //-   form()
+    //-     input(type="radio" id="videos" name="media" value="Videos" v-model="formulario")
+    //-     label(for="videos" ) Videos
         
-        input(type="radio" id="imagenes" name="media" value="Imagenes" v-model="formulario")
-        label(for="imagenes" ) Imágenes
-      p(v-if="statusRes") Total Videos: {{totalVideos}} 
-      p(v-if="statusRes") Total Imágenes: {{totalImages}} 
+    //-     input(type="radio" id="imagenes" name="media" value="Imagenes" v-model="formulario")
+    //-     label(for="imagenes" ) Imágenes
+    //-   p(v-if="statusRes") Total Videos: {{totalVideos}} 
+    //-   p(v-if="statusRes") Total Imágenes: {{totalImages}} 
       
       //- END SEARCH
 
