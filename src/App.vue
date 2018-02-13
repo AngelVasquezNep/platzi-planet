@@ -16,9 +16,7 @@
 <script>
 import Ppfooter from '@/services/layout/footer.vue'
 import Ppheader from '@/services/layout/header.vue'
-import Pphome from '@/services/layout/home.vue'
 import Ppnoticias from '@/services/layout/noticias.vue'
-import Ppcumple from '@/services/layout/Cumple.vue'
 
 // window.addEventListener("scroll", function(){
 //   console.log(window.scrollY)
@@ -31,7 +29,7 @@ export default {
     return {
     }
   },
-  components:{ Ppfooter, Ppheader, Pphome, Ppnoticias, Ppcumple }
+  components:{ Ppfooter, Ppheader, Ppnoticias }
 }
 </script>
 

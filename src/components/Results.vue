@@ -3,17 +3,19 @@
 
     ppsearch(:resultado="resultado", @search-planet="searchPlanet")
 
+    //- router-link.enlace(to="/") Nueva Busqueda
+
     spinner(v-show="statusSpinner")
 
     .nullResult(v-if="statusRes")
-      div(v-if="!resultado.collection.items.length")
+      div(v-if="!resultado.collection.items.length > 0")
         h2 Lo sentimos, no hallamos lo que buscabas, intenta de nuevo.
         img(src="@/assets/invasion.png")
     
 
-    ul(v-if="items.length > 0")
+    ul(v-if="statusRes")
       
-      a.subir(v-if="items.length > 0", href="#") ^
+      a.subir(v-if="resultado.collection.items.length > 0", href="#") ^
 
 
       ppimages(v-for="item in resultado.collection.items",
@@ -33,8 +35,8 @@
 
 <script>
 
-import Ppsearch from '@/components/Search.vue'
 import nasa from '@/services/api/fetchEarth.js'
+import Ppsearch from '@/components/Search.vue'
 import Ppimages from '@/components/Images.vue'
 import Ppvideo from '@/components/Video.vue'
 import Spinner from '@/components/Spinner.vue'
@@ -50,16 +52,15 @@ export default {
       statusRes: false,
       statusSpinner: false,
       resultado: {},
-      changePage:true
     }
   },
   components:{ Ppimages, Ppvideo, Spinner, Ppsearch },
   methods:{
-    busqueda(){
+    busqueda(q){
       this.changePage = false
       this.statusRes = false
       this.statusSpinner = true
-      nasa.search(this.qbusqueda)
+      nasa.search(q)
         .then(json=> {
           this.resultado = {}
           this.resultado = json
@@ -69,7 +70,10 @@ export default {
         })
     },
     searchPlanet(q){
-      console.log("llego " + q)
+      this.busqueda(q)
+    },
+    algo(a){
+      console.log(`Llegó ${a}`)
     }
   },
   computed:{
@@ -91,20 +95,13 @@ export default {
     }
   },
   created(){
-    this.$bus.$on('search-about', (t)=>{
-      this.qbusqueda = t
-      this.busqueda()
+    this.$bus.$on('search-planet', (t)=>{
+      this.busqueda(t)
     })
-
+    
     const id = this.$route.params.id
     const self = this
-    nasa.search(id)
-      .then(json=> {
-        this.resultado = json.collection.items[0]
-        statusRes = false
-        statusSpinner = false
-      })
-  
+    this.busqueda(id)  
   }
 }
 

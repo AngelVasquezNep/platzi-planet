@@ -2,7 +2,7 @@
   div
     .formulario
 
-      //- Ppsearch(:resultado="resultado", @search-planet="searchPlanet")
+      Ppsearch(:resultado="resultado", @search-planet="searchPlanet")
       
       //- SEARCH
 
@@ -88,6 +88,7 @@ export default {
   components:{ Ppimages, Ppvideo, Spinner, Ppsearch },
   methods:{
     busqueda(){
+      console.log("BUSQUEDA")
       this.changePage = false
       this.statusRes = false
       this.statusSpinner = true

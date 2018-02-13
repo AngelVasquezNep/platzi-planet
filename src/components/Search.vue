@@ -3,12 +3,14 @@
     
     h1 ¡Bienvenido a Platzi-Planet!
     
-      form(@submit.prevent="busqueda", )
+      //- form(@submit.prevent="busqueda" )
+      form(@submit.prevent="goToPlanet(qbusqueda)")
         
         input.buscador(type="search",
               v-model="qbusqueda", 
               placeholder="¿Qué quieres saber?",
               required)
+
         input(type="submit", value="Enviar")
 
       form()
@@ -52,6 +54,9 @@ export default {
   methods:{
     busqueda(){
       this.$emit("search-planet", this.qbusqueda)
+    },
+    goToPlanet(id){
+      this.$router.push({name: 'results', params: {id}} )
     }
   },
   computed:{

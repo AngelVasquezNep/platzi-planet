@@ -4,12 +4,12 @@
       h2 Title: {{item.data[0].title}}
     figure
       img(:src="item.links[0].href")
-    //- p {{item.data[0].description}}
+    p {{item.data[0].description}}
     p.goplanet(@click="goToPlanet(item.data[0].nasa_id)") Go to Planet !
     p Para saber más: 
       span.searchAbout(
                    v-for="t in item.data[0].keywords",
-                   @click="searchAbout(t)",
+                   @click="searchPlanet(t)",
                    title="Da click para saber más acerca de este tema"
                    ) {{t}} | 
     megusta(:item="item")
@@ -30,8 +30,8 @@ export default {
   components:{ Megusta },
   methods:{
     
-    searchAbout(t){
-      this.$bus.$emit('search-about', t)
+    searchPlanet(t){
+      this.$bus.$emit('search-planet', t)
     },
 
     goToPlanet(id){
