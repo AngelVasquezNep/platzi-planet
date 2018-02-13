@@ -157,10 +157,11 @@ export default {
     z-index: 10
 
 
-
-
-
-
+@media screen and (max-width: 800px)
+  .results
+    width: 100%  
+    margin: 0
+    padding: 0
 
 
 

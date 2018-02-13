@@ -109,9 +109,9 @@
         margin: 0
     
     .megustaOk
-      background: rgb(59, 252, 70) !important
+      background: rgb(239, 25, 141) !important
       color: #000 !important
-      border-bottom: 4px solid rgb(14, 123, 21) !important
+      border-bottom: 4px solid rgb(170, 4, 110) !important
       box-shadow: 0px 2px 5px 2px #808080
       cursor: pointer
       outline: 0
@@ -119,7 +119,7 @@
 
     .alertMegusta
       margin: 0
-      padding: 0
+      padding: 10px
       background: rgb(67, 186, 209)
       // color: #e36a25 !important
 
@@ -156,12 +156,14 @@
 
     input[type="text"]
       width: 91%
-      font-size: 1.1em
       margin: 5px
       padding: 5px
       font-family: 'Montserrat', sans-serif
       
     .comentarios
+      margin-top: 5px
+      border-top: 1px solid rgb(235, 235, 235)
+      padding: 10px 0
       input[type="button"]
         align-content: flex-end
 

@@ -17,9 +17,10 @@ name: 'ppfooter'
   div
     display: flex
     align-items: center
+    flex-wrap: wrap
     // flex-direction: column
     justify-content: center
-    background: linear-gradient(180deg, #E7E9EE, #202A90)
+    background: linear-gradient(180deg, #E7E9EE, #3640A2)
     margin-top: 5px
     margin-bottom: 0
     line-height: 100px
@@ -39,4 +40,7 @@ name: 'ppfooter'
   @media screen and (max-width: 800px)
     div
       margin-top: 20px
+      line-height: 50px
+      p
+        width: 100%
 </style>
