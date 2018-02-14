@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     p.alertMegusta(v-show="megusta") A ti y a toda la Galaxia les gusta esta imagen
-    //- iframe(:src='urlImage', width='132', height='28', style='border:none;overflow:hidden', scrolling='no', frameborder='0', allowtransparency='true')
+    
     .botones
       input(type="button", 
             value="me gusta", 
@@ -58,6 +58,7 @@
           this.mostrarComentario = true
         }
       },
+      
       addComentario(){
         if(this.newComent.text != ''){
           let hoy = new Date()
@@ -66,19 +67,18 @@
           this.newComent = {text:'', hora:0}
         }
       },
-      
-      compartir(){
-        
-      },
+     
       removeComent(index){
         this.comentariohecho.splice(index,1)
       },
+
       addMegusta(){
         setTimeout(()=>{
           this.megusta ? this.megusta = false : this.megusta = true
         }, 150)
       }
     },
+
     computed:{
       urlImage(){
         const self = this

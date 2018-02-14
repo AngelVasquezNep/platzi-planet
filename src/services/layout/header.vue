@@ -1,8 +1,7 @@
 <template lang="pug">
-  //- div(@scroll="scroled")
-  #particles-js
+  .header
     img.nave(src='@/assets/nave.svg' )
-    figure
+    figure.nasa
       a(href="https://www.nasa.gov/" target="_blank") 
         img(src="@/assets/nasaLogo.png")
 
@@ -10,8 +9,7 @@
       ul
         router-link.enlace(to="/") Home
         router-link.enlace(to="/cumple") Cumpleaños
-        //- li: a(href="#") Home
-        //- li: a(href="#") Cumpleaños
+       
 </template>
 
 <script>
@@ -21,7 +19,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  #particles-js
+  .header
     display: flex
     justify-content: space-between
     align-content: center
@@ -32,8 +30,17 @@ export default {
     height: 200px
     overflow: hidden
 
-    figure
+    .nasa
       margin: 0
+      transition: all .5s
+
+      &:hover
+        animation: 1.5s nasaMove infinite 
+        
+      @keyframes nasaMove
+        50%
+          transform: scale(.85)
+
 
       img
         height: 80px
@@ -62,10 +69,13 @@ export default {
 
     
   .nave
-    width: 100px
+    width: 80px
     padding: 10px
+    transition: .5s all
     animation: 15s naveOnSpace infinite 
 
+    &:hover
+      
 
   @keyframes naveOnSpace
     0%
@@ -85,7 +95,7 @@ export default {
       transform: translateY(0px) translateX(-650px) rotate(225deg)
 
   @media screen and (max-width: 800px)
-    #particles-js
+    .header
       display: block
       height: 260px
 

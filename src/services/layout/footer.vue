@@ -1,20 +1,22 @@
 <template lang="pug">
-  div
+  .footer
     p Platzi-planet 2018
-    p By Ángel Vasquez
+    p By Ángel Vásquez
     p: a(href="https://twitter.com/angelvasqueznep?lang=es", target="_blank") Twitter
     p: a(href="https://github.com/AngelVasquezNep/platzi-planet", target="_blank") GitHub
 
 </template>
 
 <script>
+
 export default {
-name: 'ppfooter'
+  name: 'ppfooter'
 }
+
 </script>
 
 <style lang="sass" scoped>
-  div
+  .footer
     display: flex
     align-items: center
     flex-wrap: wrap
@@ -38,7 +40,7 @@ name: 'ppfooter'
 
 
   @media screen and (max-width: 800px)
-    div
+    .footer
       margin-top: 20px
       line-height: 50px
       p

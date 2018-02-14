@@ -1,7 +1,7 @@
 <template lang="pug">
   .happy
     h2 {{info.title}}
-    img(:src="info.url", onAbort="alert('ha cancelado la carga de la imagen')")
+    img(:src="info.url")
     .pieDePag
       p.author {{info.copyright}} @copyright
       p.fecha {{info.date}}
@@ -15,12 +15,10 @@
 </template>
 
 <script>
-import Megusta from '@/components/Megusta.vue'
 
 export default {
   name: 'HappyBirthday',
   props:['info'],
-  components: { Megusta },
   data(){
     return{
       urlOrigin: 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffacebook.com%2F&amp;src=sdkpreparse'

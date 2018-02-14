@@ -7,7 +7,7 @@
     
 
 
-    form()
+    form
       input(type="radio",
             id="videos",
             name="media",

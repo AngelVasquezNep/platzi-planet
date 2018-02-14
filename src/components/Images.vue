@@ -17,7 +17,6 @@
 </template>
 
 <script>
-import nasa from '@/services/api/fetchEarth.js'
 import Megusta from '@/components/Megusta.vue'
 
 export default {
@@ -77,24 +76,7 @@ export default {
     color: #1D654B !important
     cursor: pointer
   
-  
-  
-  // @media screen and (max-width: 1024px)
-  //   li
-  //     width: 100%
-  //     figure
-  //       width: 100%
-  //       height: auto
-  //       img
-  //         width: 90%
-  //         height: auto
 
-
-  // @media screen and (max-width: 950px)
-  //   li
-  //     width: 90%
-  //     figure  
-  //       height: initial
 
 
   @media screen and (max-width: 800px)

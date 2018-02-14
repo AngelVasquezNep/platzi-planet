@@ -7,7 +7,6 @@
         h3
           a(:href="noticia.href", target="_blank") {{noticia.title}}
         p {{noticia.description}}
-        //- img(:src="noticia.img", v-if="noticia.img")
         a(:href="noticia.href", target="_blank", v-if="noticia.img")
           img(:src="noticia.img", alt="")
 
