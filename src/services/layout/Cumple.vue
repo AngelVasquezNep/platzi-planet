@@ -6,8 +6,8 @@
       input.calendario(type="date", v-model="fecha" required)
       input.enviar(type="submit")
     
+    spinner(v-if="!changeInfo")
     .imageDay(v-if="changeInfo")
-      //- h1 Prueba
       HappyBirthday(:info="info" :key="info.url")
 
 
@@ -17,33 +17,23 @@
 <script>
 import HappyBirthday from '@/components/HappyBirthday.vue'
 import nasa from '@/services/api/fetchEarth.js'
+import Spinner from '@/components/Spinner.vue'
 
 export default {
   name: 'Cumple',
-  components: { HappyBirthday },
+  components: { HappyBirthday, Spinner },
   data(){
     return {
       changeInfo: false,
-      fecha: '',
-      info: [
-        { 
-            "copyright": "Pierre Destribats", 
-            "date": "2017-01-10", 
-            "explanation": "Who guards the north?  The featured picture was taken last March in Finnish Lapland where weather can include sub-freezing temperatures and driving snow.  Surreal landscapes sometimes result, where white alien-looking sentinels seem to patrol the landscape.  In actuality though, the aliens are snow-covered trees, and the red hut they seem to be guarding is an outhouse.  Far in the distance, behind this uncommon Earthly vista, is a beautiful night sky which includes a green aurora, bright stars, and streaks of orbiting satellites.  Of course, in the spring, the trees thaw and Lapland looks much  different.", 
-            "hdurl": "https://apod.nasa.gov/apod/image/1701/SnowTreesAurora_Destribats_3000.jpg", 
-            "media_type": "image", 
-            "service_version": "v1", 
-            "title": "Sentinels of a Northern Sky", 
-            "url": "https://apod.nasa.gov/apod/image/1701/SnowTreesAurora_Destribats_1080.jpg"
-          }
-      ]
+      fecha: ''
     }
   },
   methods: {
     buscarFoto(){
-      console.log("TODO OK")
+      this.changeInfo = false
       nasa.cumple(this.fecha)
         .then(json =>{
+          this.changeInfo = true
           this.info = json
         })
     }

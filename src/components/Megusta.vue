@@ -74,7 +74,9 @@
         this.comentariohecho.splice(index,1)
       },
       addMegusta(){
-        this.megusta ? this.megusta = false : this.megusta = true
+        setTimeout(()=>{
+          this.megusta ? this.megusta = false : this.megusta = true
+        }, 150)
       }
     },
     computed:{

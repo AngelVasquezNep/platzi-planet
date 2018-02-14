@@ -1,6 +1,6 @@
 <template lang="pug">
   
-  div
+  .noticias
     h2 Enterate de lo más interesante de Platzi-Planet
     ul
       li(v-for="noticia in noticias")
@@ -30,7 +30,7 @@
 
 <style lang="sass" scoped>
 
-  div
+  .noticias
     width: 30%
     margin: 10px
     background: #ffff

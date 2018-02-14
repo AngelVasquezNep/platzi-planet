@@ -138,7 +138,7 @@ export default {
 
 .results
   width: 70%
-
+  
   .newSearch
     background: linear-gradient(180deg, #EEEBEB, #E7E9EE)
     margin: .6rem

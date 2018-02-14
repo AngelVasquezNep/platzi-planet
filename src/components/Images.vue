@@ -52,12 +52,10 @@ export default {
     border: 1px solid rgb(211, 211, 211)
     align-self: center
     figure
-      height: 350px
       width: 100%
       margin: 0
       img
-        // width: 90%
-        height: 100%
+        width: 100%
 
 
     .titulo
