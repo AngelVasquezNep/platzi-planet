@@ -1,7 +1,6 @@
 <template lang="pug">
   div
     Ppsearch
-    
     .message
       h2 THE SPACE IS YOURS
       img(src="@/assets/elon-musk.jpg")

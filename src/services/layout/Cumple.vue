@@ -5,9 +5,20 @@
     form.formulario(@submit.prevent="buscarFoto")
       input.calendario(type="date", v-model="fecha" required)
       input.enviar(type="submit")
-    
+
+    .error(v-if="info.code == 400") 
+      h1 ¡Lo sentimos! 
+      h3 Su consulta es muy antigua y la NASA nos informa: 
+      p "{{ info.msg }}"
+      
+      picture.imgerror
+        img(src="@/assets/mayas.jpg")
+        small Pintado por 
+          a(href="http://usuarios.dibujos.net/amachave/dibujos-pintados/" target="_blank") amachave 
+          | el 30 de Diciembre del 2012
+ 
     spinner(v-if="!changeInfo")
-    .imageDay(v-if="changeInfo")
+    .imageDay(v-if="changeInfo && !info.code ")
       HappyBirthday(:info="info" :key="info.url")
 
 
@@ -25,6 +36,7 @@ export default {
   data(){
     return {
       changeInfo: false,
+      info: {},
       fecha: ''
     }
   },
@@ -79,6 +91,15 @@ export default {
       box-shadow: 0 3px 2px 3px #808080
       color: #fff
       background-color: #6F3E6E
+
+  .imgerror
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img
+      width: 90%;
+    
 
   @media screen and (max-width: 800px)
     .cumple
