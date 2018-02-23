@@ -2,7 +2,7 @@
   .results
 
     .newSearch
-      h2 Nos alegra tenerte en nuestro espacio
+      h2#objetivo Nos alegra tenerte en nuestro espacio
       router-link.enlace(to="/") Vamos por otra busqueda
     
 
@@ -41,7 +41,7 @@
 
     ul(v-if="statusRes")
       
-      a.subir(v-if="resultado.collection.items.length > 0", href="#") ^
+      .subir(v-if="resultado.collection.items.length > 0" @click="subir") ^
 
 
       ppimages(v-for="item in resultado.collection.items",
@@ -82,6 +82,7 @@ export default {
   },
   components:{ Ppimages, Ppvideo, Spinner, Ppsearch },
   methods:{
+    
     busqueda(q){
       this.changePage = false
       this.statusRes = false
@@ -95,12 +96,23 @@ export default {
           this.qbusqueda = ''
         })
     },
+    
     searchPlanet(q){
       this.busqueda(q)
     },
+    
     algo(a){
       console.log(`Llegó ${a}`)
+    },
+
+    subir(){
+      const $objetivo = document.getElementById("header")
+      $objetivo.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+      })
     }
+
   },
   computed:{
     totalImages(){
@@ -183,7 +195,7 @@ export default {
     font-size: 2em
     font-weight: 700
     z-index: 10
-
+    cursor: pointer
 
   input[type="radio"]
     -webkit-appearance: none;

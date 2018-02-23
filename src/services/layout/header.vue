@@ -1,5 +1,5 @@
 <template lang="pug">
-  .header
+  #header.header
     img.nave(src='@/assets/nave.svg' )
     figure.nasa
       a(href="https://www.nasa.gov/" target="_blank") 
