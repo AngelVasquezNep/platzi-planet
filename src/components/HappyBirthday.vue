@@ -2,7 +2,6 @@
   .happy
     h2 {{info.title}}
     img(:src="info.url")
-    video(:src="info.url")
     .pieDePag
       p.author {{info.copyright}} @copyright
       p.fecha {{info.date}}
