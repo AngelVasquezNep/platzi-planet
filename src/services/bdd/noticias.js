@@ -4,7 +4,7 @@ export default [
     description: `¡Únete a nuestra comunidad! Somos los estudiantes
                   que estamos construyendo el futuro.`,
     href: "https://www.platzi.com",
-    img: `/platzi.png`
+    img: `@/assets/platzi.png`
   },
   {
     title: "Aprende a programar ¡es gratis!",
