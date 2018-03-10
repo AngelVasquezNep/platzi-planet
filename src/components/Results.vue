@@ -41,7 +41,7 @@
 
     ul(v-if="statusRes")
       
-      .subir(v-if="resultado.collection.items.length > 0" @click="subir") ^
+      .subir(v-if="resultado.collection.items.length > 0", @click="subir") ^
 
 
       ppimages(v-for="item in resultado.collection.items",
