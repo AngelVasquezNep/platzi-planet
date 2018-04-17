@@ -1,22 +1,48 @@
-<<<<<<< HEAD
-# platzi-planet
+# Platzi-Planet
 
-> A Vue.js project
+> Proyecto realizado con Vue.js y la API de la NASA.
 
-## Build Setup
+Se uso una estructura modular para crear componentes reutilizables que se nutrieran con la información que la API enviará.
 
-``` bash
-# install dependencies
-npm install
+¡Fue súper divertido contruirla! 💚
 
-# serve with hot reload at localhost:8080
-npm run dev
+### Landing
 
-# build for production with minification
-npm run build
-```
+![Platzi-planet-landing](https://raw.githubusercontent.com/AngelVasquezNep/platzi-planet/master/src/assets/platzi-planet-1.png)
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
-=======
-# platzi-planet
->>>>>>> da043065277eb3bd2a14fab6746e8cc472842f61
+### Componente de resultados tipo Facebook
+
+![Platzi-planet-landing](https://raw.githubusercontent.com/AngelVasquezNep/platzi-planet/master/src/assets/platzi-planet-2.png)
+
+### Sistema de comentarios modular que se adapta a su componente padre
+
+![Platzi-planet-landing](https://raw.githubusercontent.com/AngelVasquezNep/platzi-planet/master/src/assets/platzi-planet-3.png)
+
+### Uso de Vue-routing para hacer busquedas con propiedades de la URL
+
+![Platzi-planet-landing](https://raw.githubusercontent.com/AngelVasquezNep/platzi-planet/master/src/assets/platzi-planet-4.png)
+
+### Mejora de la UI con Spinner de carga
+
+![Platzi-planet-landing](https://raw.githubusercontent.com/AngelVasquezNep/platzi-planet/master/src/assets/platzi-planet-5.png)
+
+### Botón para compartir en Facebook
+
+![Platzi-planet-landing](https://raw.githubusercontent.com/AngelVasquezNep/platzi-planet/master/src/assets/platzi-planet-6.png)
+
+### Ejemplo: 
+
+![Platzi-planet-landing](https://raw.githubusercontent.com/AngelVasquezNep/platzi-planet/master/src/assets/platzi-planet-7.png)
+
+
+___
+
+### Autor
+
+Mi nombre es Ángel Vásquez, desarrollador front end.
+
+🚀 Me gusta Vue y React.
+
+[GitHub](https://github.com/angelvasqueznep) 
+
+[Twitter](https://twitter.com/angelvasqueznep)
